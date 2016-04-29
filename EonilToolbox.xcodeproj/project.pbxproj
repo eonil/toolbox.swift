@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4564D3871CD2CD39001265EA /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4564D3861CD2CD39001265EA /* ColorExtensions.swift */; };
 		45771AC51CD0E4B50096947A /* DisplayLinkUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771ABE1CD0E2D10096947A /* DisplayLinkUtility.swift */; };
 		45771AC61CD0E4B50096947A /* ViewInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AC01CD0E37E0096947A /* ViewInstaller.swift */; };
 		45771AC71CD0E4B50096947A /* ObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AC21CD0E3CC0096947A /* ObjectID.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		4564D3631CD0EBF9001265EA /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		4564D3641CD0EBF9001265EA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4564D3861CD2CD39001265EA /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		45771A9D1CD0E1A30096947A /* EonilToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EonilToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45771AA21CD0E1A30096947A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45771ABA1CD0E2AD0096947A /* AppKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKitExtensions.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				45771ABE1CD0E2D10096947A /* DisplayLinkUtility.swift */,
 				45771AC01CD0E37E0096947A /* ViewInstaller.swift */,
 				45771AC21CD0E3CC0096947A /* ObjectID.swift */,
+				4564D3861CD2CD39001265EA /* ColorExtensions.swift */,
 				45771AD41CD0E6430096947A /* LayoutBox */,
 				45771ACD1CD0E58F0096947A /* iOSOnly */,
 				45771AB81CD0E29F0096947A /* OSXOnly */,
@@ -245,6 +248,7 @@
 				45771AC51CD0E4B50096947A /* DisplayLinkUtility.swift in Sources */,
 				45771AE01CD0E6640096947A /* SilentBox.swift in Sources */,
 				45771AD31CD0E5980096947A /* UIKitExtensions.swift in Sources */,
+				4564D3871CD2CD39001265EA /* ColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
