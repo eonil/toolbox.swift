@@ -25,6 +25,8 @@
 		45771B1D1CD0EB6A0096947A /* BoxTypeCoreGraphicsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AD71CD0E6430096947A /* BoxTypeCoreGraphicsExtensions.swift */; };
 		45771B1E1CD0EB6A0096947A /* SilentBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AD81CD0E6430096947A /* SilentBox.swift */; };
 		45771B1F1CD0EBA00096947A /* AppKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771ABA1CD0E2AD0096947A /* AppKitExtensions.swift */; };
+		459AC37C1CD3B8F300F2B57E /* ReferenceSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459AC37B1CD3B8F300F2B57E /* ReferenceSet.swift */; };
+		459AC37D1CD3BA7100F2B57E /* ReferenceSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459AC37B1CD3B8F300F2B57E /* ReferenceSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,7 @@
 		45771AD71CD0E6430096947A /* BoxTypeCoreGraphicsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxTypeCoreGraphicsExtensions.swift; sourceTree = "<group>"; };
 		45771AD81CD0E6430096947A /* SilentBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SilentBox.swift; sourceTree = "<group>"; };
 		45771B101CD0EAE10096947A /* EonilToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EonilToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		459AC37B1CD3B8F300F2B57E /* ReferenceSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferenceSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,7 @@
 				45771ABE1CD0E2D10096947A /* DisplayLinkUtility.swift */,
 				45771AC01CD0E37E0096947A /* ViewInstaller.swift */,
 				45771AC21CD0E3CC0096947A /* ObjectID.swift */,
+				459AC37B1CD3B8F300F2B57E /* ReferenceSet.swift */,
 				4564D3861CD2CD39001265EA /* ColorExtensions.swift */,
 				45771AD41CD0E6430096947A /* LayoutBox */,
 				45771ACD1CD0E58F0096947A /* iOSOnly */,
@@ -242,6 +246,7 @@
 				45771AC71CD0E4B50096947A /* ObjectID.swift in Sources */,
 				45771AD21CD0E5980096947A /* DisplayLinkUtilityMobile.swift in Sources */,
 				45771ADE1CD0E6640096947A /* BoxType.swift in Sources */,
+				459AC37C1CD3B8F300F2B57E /* ReferenceSet.swift in Sources */,
 				45771ADF1CD0E6640096947A /* BoxTypeCoreGraphicsExtensions.swift in Sources */,
 				45771AC61CD0E4B50096947A /* ViewInstaller.swift in Sources */,
 				45771ADD1CD0E6640096947A /* Box.swift in Sources */,
@@ -260,6 +265,7 @@
 				45771B1B1CD0EB6A0096947A /* Box.swift in Sources */,
 				45771B1F1CD0EBA00096947A /* AppKitExtensions.swift in Sources */,
 				45771B1A1CD0EB650096947A /* ObjectID.swift in Sources */,
+				459AC37D1CD3BA7100F2B57E /* ReferenceSet.swift in Sources */,
 				45771B1E1CD0EB6A0096947A /* SilentBox.swift in Sources */,
 				45771B1D1CD0EB6A0096947A /* BoxTypeCoreGraphicsExtensions.swift in Sources */,
 				45771B191CD0EB650096947A /* ViewInstaller.swift in Sources */,
