@@ -12,15 +12,17 @@ enum ViewInstallerState {
     case Installing
     case Installed
 }
-struct ViewInstaller {
+public struct ViewInstaller {
     private(set) var state = ViewInstallerState.Uninstalled
-    mutating func installerIfNeeded(@noescape f: ()->()) {
+    public init() {
+    }
+    public mutating func installIfNeeded(@noescape f: ()->()) {
         guard state == .Uninstalled else { return }
         state = .Installing
         f()
         state = .Installed
     }
-    mutating func deinstallIfNeeded(@noescape f: ()->()) {
+    public mutating func deinstallIfNeeded(@noescape f: ()->()) {
         guard state == .Installed else { return }
         state = .Deinstalling
         f()
