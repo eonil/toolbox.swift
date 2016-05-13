@@ -10,7 +10,7 @@
 		4564D3871CD2CD39001265EA /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4564D3861CD2CD39001265EA /* ColorExtensions.swift */; };
 		45771AC51CD0E4B50096947A /* DisplayLinkUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771ABE1CD0E2D10096947A /* DisplayLinkUtility.swift */; };
 		45771AC61CD0E4B50096947A /* ViewInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AC01CD0E37E0096947A /* ViewInstaller.swift */; };
-		45771AC71CD0E4B50096947A /* ObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AC21CD0E3CC0096947A /* ObjectID.swift */; };
+		45771AC71CD0E4B50096947A /* ObjectAddressID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AC21CD0E3CC0096947A /* ObjectAddressID.swift */; };
 		45771AD21CD0E5980096947A /* DisplayLinkUtilityMobile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771ACE1CD0E58F0096947A /* DisplayLinkUtilityMobile.swift */; };
 		45771AD31CD0E5980096947A /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771ACF1CD0E58F0096947A /* UIKitExtensions.swift */; };
 		45771ADD1CD0E6640096947A /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AD51CD0E6430096947A /* Box.swift */; };
@@ -19,7 +19,7 @@
 		45771AE01CD0E6640096947A /* SilentBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AD81CD0E6430096947A /* SilentBox.swift */; };
 		45771B181CD0EB650096947A /* DisplayLinkUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771ABE1CD0E2D10096947A /* DisplayLinkUtility.swift */; };
 		45771B191CD0EB650096947A /* ViewInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AC01CD0E37E0096947A /* ViewInstaller.swift */; };
-		45771B1A1CD0EB650096947A /* ObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AC21CD0E3CC0096947A /* ObjectID.swift */; };
+		45771B1A1CD0EB650096947A /* ObjectAddressID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AC21CD0E3CC0096947A /* ObjectAddressID.swift */; };
 		45771B1B1CD0EB6A0096947A /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AD51CD0E6430096947A /* Box.swift */; };
 		45771B1C1CD0EB6A0096947A /* BoxType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AD61CD0E6430096947A /* BoxType.swift */; };
 		45771B1D1CD0EB6A0096947A /* BoxTypeCoreGraphicsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AD71CD0E6430096947A /* BoxTypeCoreGraphicsExtensions.swift */; };
@@ -40,7 +40,7 @@
 		45771ABA1CD0E2AD0096947A /* AppKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKitExtensions.swift; sourceTree = "<group>"; };
 		45771ABE1CD0E2D10096947A /* DisplayLinkUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayLinkUtility.swift; sourceTree = "<group>"; };
 		45771AC01CD0E37E0096947A /* ViewInstaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInstaller.swift; sourceTree = "<group>"; };
-		45771AC21CD0E3CC0096947A /* ObjectID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectID.swift; sourceTree = "<group>"; };
+		45771AC21CD0E3CC0096947A /* ObjectAddressID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectAddressID.swift; sourceTree = "<group>"; };
 		45771ACE1CD0E58F0096947A /* DisplayLinkUtilityMobile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayLinkUtilityMobile.swift; sourceTree = "<group>"; };
 		45771ACF1CD0E58F0096947A /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		45771AD51CD0E6430096947A /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 				45771AA21CD0E1A30096947A /* Info.plist */,
 				45771ABE1CD0E2D10096947A /* DisplayLinkUtility.swift */,
 				45771AC01CD0E37E0096947A /* ViewInstaller.swift */,
-				45771AC21CD0E3CC0096947A /* ObjectID.swift */,
+				45771AC21CD0E3CC0096947A /* ObjectAddressID.swift */,
 				459AC37B1CD3B8F300F2B57E /* ReferenceSet.swift */,
 				4564D3861CD2CD39001265EA /* ColorExtensions.swift */,
 				459DB8DE1CD48C1D00C892D9 /* InternalUtilityFunctions.swift */,
@@ -247,7 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45771AC71CD0E4B50096947A /* ObjectID.swift in Sources */,
+				45771AC71CD0E4B50096947A /* ObjectAddressID.swift in Sources */,
 				45771AD21CD0E5980096947A /* DisplayLinkUtilityMobile.swift in Sources */,
 				45771ADE1CD0E6640096947A /* BoxType.swift in Sources */,
 				459AC37C1CD3B8F300F2B57E /* ReferenceSet.swift in Sources */,
@@ -270,7 +270,7 @@
 				45771B1B1CD0EB6A0096947A /* Box.swift in Sources */,
 				45771B1F1CD0EBA00096947A /* AppKitExtensions.swift in Sources */,
 				459DB8E01CD48CBE00C892D9 /* InternalUtilityFunctions.swift in Sources */,
-				45771B1A1CD0EB650096947A /* ObjectID.swift in Sources */,
+				45771B1A1CD0EB650096947A /* ObjectAddressID.swift in Sources */,
 				459AC37D1CD3BA7100F2B57E /* ReferenceSet.swift in Sources */,
 				45771B1E1CD0EB6A0096947A /* SilentBox.swift in Sources */,
 				45771B1D1CD0EB6A0096947A /* BoxTypeCoreGraphicsExtensions.swift in Sources */,
