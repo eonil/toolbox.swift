@@ -25,6 +25,8 @@
 		45771B1D1CD0EB6A0096947A /* BoxTypeCoreGraphicsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AD71CD0E6430096947A /* BoxTypeCoreGraphicsExtensions.swift */; };
 		45771B1E1CD0EB6A0096947A /* SilentBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AD81CD0E6430096947A /* SilentBox.swift */; };
 		45771B1F1CD0EBA00096947A /* AppKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771ABA1CD0E2AD0096947A /* AppKitExtensions.swift */; };
+		45830AB21CE9538B002FEA3D /* WeakReferenceSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45830AB11CE9538B002FEA3D /* WeakReferenceSet.swift */; };
+		45830AB31CE95458002FEA3D /* WeakReferenceSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45830AB11CE9538B002FEA3D /* WeakReferenceSet.swift */; };
 		459AC37C1CD3B8F300F2B57E /* ReferenceSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459AC37B1CD3B8F300F2B57E /* ReferenceSet.swift */; };
 		459AC37D1CD3BA7100F2B57E /* ReferenceSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459AC37B1CD3B8F300F2B57E /* ReferenceSet.swift */; };
 		459DB8DF1CD48C1D00C892D9 /* InternalUtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459DB8DE1CD48C1D00C892D9 /* InternalUtilityFunctions.swift */; };
@@ -48,6 +50,7 @@
 		45771AD71CD0E6430096947A /* BoxTypeCoreGraphicsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxTypeCoreGraphicsExtensions.swift; sourceTree = "<group>"; };
 		45771AD81CD0E6430096947A /* SilentBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SilentBox.swift; sourceTree = "<group>"; };
 		45771B101CD0EAE10096947A /* EonilToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EonilToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45830AB11CE9538B002FEA3D /* WeakReferenceSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakReferenceSet.swift; sourceTree = "<group>"; };
 		459AC37B1CD3B8F300F2B57E /* ReferenceSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferenceSet.swift; sourceTree = "<group>"; };
 		459DB8DE1CD48C1D00C892D9 /* InternalUtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternalUtilityFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +100,7 @@
 				45771AC01CD0E37E0096947A /* ViewInstaller.swift */,
 				45771AC21CD0E3CC0096947A /* ObjectAddressID.swift */,
 				459AC37B1CD3B8F300F2B57E /* ReferenceSet.swift */,
+				45830AB11CE9538B002FEA3D /* WeakReferenceSet.swift */,
 				4564D3861CD2CD39001265EA /* ColorExtensions.swift */,
 				459DB8DE1CD48C1D00C892D9 /* InternalUtilityFunctions.swift */,
 				45771AD41CD0E6430096947A /* LayoutBox */,
@@ -248,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45771AC71CD0E4B50096947A /* ObjectAddressID.swift in Sources */,
+				45830AB21CE9538B002FEA3D /* WeakReferenceSet.swift in Sources */,
 				45771AD21CD0E5980096947A /* DisplayLinkUtilityMobile.swift in Sources */,
 				45771ADE1CD0E6640096947A /* BoxType.swift in Sources */,
 				459AC37C1CD3B8F300F2B57E /* ReferenceSet.swift in Sources */,
@@ -276,6 +281,7 @@
 				45771B1D1CD0EB6A0096947A /* BoxTypeCoreGraphicsExtensions.swift in Sources */,
 				45771B191CD0EB650096947A /* ViewInstaller.swift in Sources */,
 				45771B1C1CD0EB6A0096947A /* BoxType.swift in Sources */,
+				45830AB31CE95458002FEA3D /* WeakReferenceSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
