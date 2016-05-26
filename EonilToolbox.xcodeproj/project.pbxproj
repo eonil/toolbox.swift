@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		455569331CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455569321CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift */; };
 		4564D3871CD2CD39001265EA /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4564D3861CD2CD39001265EA /* ColorExtensions.swift */; };
 		45771AC51CD0E4B50096947A /* DisplayLinkUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771ABE1CD0E2D10096947A /* DisplayLinkUtility.swift */; };
 		45771AC61CD0E4B50096947A /* ViewInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AC01CD0E37E0096947A /* ViewInstaller.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		455569321CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtomicUtilityTypes.swift; sourceTree = "<group>"; };
 		4564D3631CD0EBF9001265EA /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		4564D3641CD0EBF9001265EA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4564D3861CD2CD39001265EA /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				45830AB11CE9538B002FEA3D /* WeakReferenceSet.swift */,
 				4564D3861CD2CD39001265EA /* ColorExtensions.swift */,
 				459DB8DE1CD48C1D00C892D9 /* InternalUtilityFunctions.swift */,
+				455569321CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift */,
 				45771AD41CD0E6430096947A /* LayoutBox */,
 				45771ACD1CD0E58F0096947A /* iOSOnly */,
 				45771AB81CD0E29F0096947A /* OSXOnly */,
@@ -253,6 +256,7 @@
 			files = (
 				45771AC71CD0E4B50096947A /* ObjectAddressID.swift in Sources */,
 				45830AB21CE9538B002FEA3D /* WeakReferenceSet.swift in Sources */,
+				455569331CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift in Sources */,
 				45771AD21CD0E5980096947A /* DisplayLinkUtilityMobile.swift in Sources */,
 				45771ADE1CD0E6640096947A /* BoxType.swift in Sources */,
 				459AC37C1CD3B8F300F2B57E /* ReferenceSet.swift in Sources */,
