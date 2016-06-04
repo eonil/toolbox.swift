@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		451C93BD1D0331A900C5F640 /* DisplayLinkUtility-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C93BC1D0331A900C5F640 /* DisplayLinkUtility-iOS.swift */; };
 		455569331CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455569321CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift */; };
 		4564D3871CD2CD39001265EA /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4564D3861CD2CD39001265EA /* ColorExtensions.swift */; };
-		45771AC51CD0E4B50096947A /* DisplayLinkUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771ABE1CD0E2D10096947A /* DisplayLinkUtility.swift */; };
+		45771AC51CD0E4B50096947A /* DisplayLinkUtility-OSX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771ABE1CD0E2D10096947A /* DisplayLinkUtility-OSX.swift */; };
 		45771AC61CD0E4B50096947A /* ViewInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AC01CD0E37E0096947A /* ViewInstaller.swift */; };
 		45771AC71CD0E4B50096947A /* ObjectAddressID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AC21CD0E3CC0096947A /* ObjectAddressID.swift */; };
 		45771AD21CD0E5980096947A /* DisplayLinkUtilityMobile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771ACE1CD0E58F0096947A /* DisplayLinkUtilityMobile.swift */; };
@@ -18,7 +19,7 @@
 		45771ADE1CD0E6640096947A /* BoxType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AD61CD0E6430096947A /* BoxType.swift */; };
 		45771ADF1CD0E6640096947A /* BoxTypeCoreGraphicsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AD71CD0E6430096947A /* BoxTypeCoreGraphicsExtensions.swift */; };
 		45771AE01CD0E6640096947A /* SilentBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AD81CD0E6430096947A /* SilentBox.swift */; };
-		45771B181CD0EB650096947A /* DisplayLinkUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771ABE1CD0E2D10096947A /* DisplayLinkUtility.swift */; };
+		45771B181CD0EB650096947A /* DisplayLinkUtility-OSX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771ABE1CD0E2D10096947A /* DisplayLinkUtility-OSX.swift */; };
 		45771B191CD0EB650096947A /* ViewInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AC01CD0E37E0096947A /* ViewInstaller.swift */; };
 		45771B1A1CD0EB650096947A /* ObjectAddressID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AC21CD0E3CC0096947A /* ObjectAddressID.swift */; };
 		45771B1B1CD0EB6A0096947A /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AD51CD0E6430096947A /* Box.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		451C93BC1D0331A900C5F640 /* DisplayLinkUtility-iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DisplayLinkUtility-iOS.swift"; sourceTree = "<group>"; };
 		455569321CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtomicUtilityTypes.swift; sourceTree = "<group>"; };
 		4564D3631CD0EBF9001265EA /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		4564D3641CD0EBF9001265EA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -42,7 +44,7 @@
 		45771A9D1CD0E1A30096947A /* EonilToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EonilToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45771AA21CD0E1A30096947A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45771ABA1CD0E2AD0096947A /* AppKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKitExtensions.swift; sourceTree = "<group>"; };
-		45771ABE1CD0E2D10096947A /* DisplayLinkUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayLinkUtility.swift; sourceTree = "<group>"; };
+		45771ABE1CD0E2D10096947A /* DisplayLinkUtility-OSX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DisplayLinkUtility-OSX.swift"; sourceTree = "<group>"; };
 		45771AC01CD0E37E0096947A /* ViewInstaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInstaller.swift; sourceTree = "<group>"; };
 		45771AC21CD0E3CC0096947A /* ObjectAddressID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectAddressID.swift; sourceTree = "<group>"; };
 		45771ACE1CD0E58F0096947A /* DisplayLinkUtilityMobile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayLinkUtilityMobile.swift; sourceTree = "<group>"; };
@@ -98,7 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				45771AA21CD0E1A30096947A /* Info.plist */,
-				45771ABE1CD0E2D10096947A /* DisplayLinkUtility.swift */,
+				45771ABE1CD0E2D10096947A /* DisplayLinkUtility-OSX.swift */,
+				451C93BC1D0331A900C5F640 /* DisplayLinkUtility-iOS.swift */,
 				45771AC01CD0E37E0096947A /* ViewInstaller.swift */,
 				45771AC21CD0E3CC0096947A /* ObjectAddressID.swift */,
 				459AC37B1CD3B8F300F2B57E /* ReferenceSet.swift */,
@@ -264,10 +267,11 @@
 				45771AC61CD0E4B50096947A /* ViewInstaller.swift in Sources */,
 				45771ADD1CD0E6640096947A /* Box.swift in Sources */,
 				459DB8DF1CD48C1D00C892D9 /* InternalUtilityFunctions.swift in Sources */,
-				45771AC51CD0E4B50096947A /* DisplayLinkUtility.swift in Sources */,
+				45771AC51CD0E4B50096947A /* DisplayLinkUtility-OSX.swift in Sources */,
 				45771AE01CD0E6640096947A /* SilentBox.swift in Sources */,
 				45771AD31CD0E5980096947A /* UIKitExtensions.swift in Sources */,
 				4564D3871CD2CD39001265EA /* ColorExtensions.swift in Sources */,
+				451C93BD1D0331A900C5F640 /* DisplayLinkUtility-iOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45771B181CD0EB650096947A /* DisplayLinkUtility.swift in Sources */,
+				45771B181CD0EB650096947A /* DisplayLinkUtility-OSX.swift in Sources */,
 				45771B1B1CD0EB6A0096947A /* Box.swift in Sources */,
 				45771B1F1CD0EBA00096947A /* AppKitExtensions.swift in Sources */,
 				459DB8E01CD48CBE00C892D9 /* InternalUtilityFunctions.swift in Sources */,

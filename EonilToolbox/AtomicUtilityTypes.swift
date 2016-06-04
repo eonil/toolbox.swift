@@ -25,14 +25,14 @@ public struct AtomicInt32 {
     public var value: Int32 {
         get { return memory }
     }
-    public func compareAndSwapBarrier(newValue: Int32) throws {
+    public mutating func compareAndSwapBarrier(newValue: Int32) throws {
         let ok = OSAtomicCompareAndSwap32Barrier(memory, newValue, &memory)
         guard ok else { throw AtomicError.SwappingFailureBecauseOldValueDoesNotMatch }
     }
-    public func increment() {
+    public mutating func increment() {
         OSAtomicIncrement32(&memory)
     }
-    public func decrement() {
+    public mutating func decrement() {
         OSAtomicDecrement32(&memory)
     }
 }
@@ -59,14 +59,14 @@ public struct AtomicInt64 {
     public var value: Int64 {
         get { return memory }
     }
-    public func compareAndSwapBarrier(newValue: Int64) throws {
+    public mutating func compareAndSwapBarrier(newValue: Int64) throws {
         let ok = OSAtomicCompareAndSwap64Barrier(memory, newValue, &memory)
         guard ok else { throw AtomicError.SwappingFailureBecauseOldValueDoesNotMatch }
     }
-    public func increment() {
+    public mutating func increment() {
         OSAtomicIncrement64(&memory)
     }
-    public func decrement() {
+    public mutating func decrement() {
         OSAtomicDecrement64(&memory)
     }
 }

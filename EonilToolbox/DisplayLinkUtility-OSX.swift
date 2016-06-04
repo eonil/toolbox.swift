@@ -6,7 +6,6 @@
 //  Copyright © 2016 Eonil. All rights reserved.
 //
 
-
 #if os(OSX)
     import Foundation
     import AppKit
@@ -92,6 +91,7 @@
     }
 
 #endif
+
 
 
 
