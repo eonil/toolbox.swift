@@ -1,0 +1,12 @@
+language: swift
+
+xcode_project: EonilToolbox.xcodeproj
+xcode_scheme: EonilToolbox-iOS
+xcode_scheme: EonilToolbox-OSX
+
+matrix:
+  include:
+    - os: osx
+      osx_image: xcode7.3
+
+
