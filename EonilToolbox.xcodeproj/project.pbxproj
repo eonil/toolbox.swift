@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		451C93BD1D0331A900C5F640 /* DisplayLinkUtility-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C93BC1D0331A900C5F640 /* DisplayLinkUtility-iOS.swift */; };
+		451C94DE1D053CFC00C5F640 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C94DC1D053CFC00C5F640 /* Version.swift */; };
+		451C94DF1D053CFC00C5F640 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C94DC1D053CFC00C5F640 /* Version.swift */; };
+		451C94E01D053CFC00C5F640 /* VersionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C94DD1D053CFC00C5F640 /* VersionType.swift */; };
+		451C94E11D053CFC00C5F640 /* VersionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C94DD1D053CFC00C5F640 /* VersionType.swift */; };
 		455569331CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455569321CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift */; };
 		4564D3871CD2CD39001265EA /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4564D3861CD2CD39001265EA /* ColorExtensions.swift */; };
 		45771AC51CD0E4B50096947A /* DisplayLinkUtility-OSX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771ABE1CD0E2D10096947A /* DisplayLinkUtility-OSX.swift */; };
@@ -37,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		451C93BC1D0331A900C5F640 /* DisplayLinkUtility-iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DisplayLinkUtility-iOS.swift"; sourceTree = "<group>"; };
+		451C94DC1D053CFC00C5F640 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		451C94DD1D053CFC00C5F640 /* VersionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionType.swift; sourceTree = "<group>"; };
 		455569321CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtomicUtilityTypes.swift; sourceTree = "<group>"; };
 		4564D3631CD0EBF9001265EA /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		4564D3641CD0EBF9001265EA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -77,6 +83,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		451C94DB1D053CEF00C5F640 /* StateManagement */ = {
+			isa = PBXGroup;
+			children = (
+				451C94DD1D053CFC00C5F640 /* VersionType.swift */,
+				451C94DC1D053CFC00C5F640 /* Version.swift */,
+			);
+			path = StateManagement;
+			sourceTree = "<group>";
+		};
 		45771A931CD0E1A30096947A = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +124,7 @@
 				4564D3861CD2CD39001265EA /* ColorExtensions.swift */,
 				459DB8DE1CD48C1D00C892D9 /* InternalUtilityFunctions.swift */,
 				455569321CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift */,
+				451C94DB1D053CEF00C5F640 /* StateManagement */,
 				45771AD41CD0E6430096947A /* LayoutBox */,
 				45771ACD1CD0E58F0096947A /* iOSOnly */,
 				45771AB81CD0E29F0096947A /* OSXOnly */,
@@ -257,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				451C94E01D053CFC00C5F640 /* VersionType.swift in Sources */,
 				45771AC71CD0E4B50096947A /* ObjectAddressID.swift in Sources */,
 				45830AB21CE9538B002FEA3D /* WeakReferenceSet.swift in Sources */,
 				455569331CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift in Sources */,
@@ -271,6 +288,7 @@
 				45771AE01CD0E6640096947A /* SilentBox.swift in Sources */,
 				45771AD31CD0E5980096947A /* UIKitExtensions.swift in Sources */,
 				4564D3871CD2CD39001265EA /* ColorExtensions.swift in Sources */,
+				451C94DE1D053CFC00C5F640 /* Version.swift in Sources */,
 				451C93BD1D0331A900C5F640 /* DisplayLinkUtility-iOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,12 +301,14 @@
 				45771B1B1CD0EB6A0096947A /* Box.swift in Sources */,
 				45771B1F1CD0EBA00096947A /* AppKitExtensions.swift in Sources */,
 				459DB8E01CD48CBE00C892D9 /* InternalUtilityFunctions.swift in Sources */,
+				451C94E11D053CFC00C5F640 /* VersionType.swift in Sources */,
 				45771B1A1CD0EB650096947A /* ObjectAddressID.swift in Sources */,
 				459AC37D1CD3BA7100F2B57E /* ReferenceSet.swift in Sources */,
 				45771B1E1CD0EB6A0096947A /* SilentBox.swift in Sources */,
 				45771B1D1CD0EB6A0096947A /* BoxTypeCoreGraphicsExtensions.swift in Sources */,
 				45771B191CD0EB650096947A /* ViewInstaller.swift in Sources */,
 				45771B1C1CD0EB6A0096947A /* BoxType.swift in Sources */,
+				451C94DF1D053CFC00C5F640 /* Version.swift in Sources */,
 				45830AB31CE95458002FEA3D /* WeakReferenceSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
