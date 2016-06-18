@@ -33,6 +33,12 @@
 		45771B1F1CD0EBA00096947A /* AppKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771ABA1CD0E2AD0096947A /* AppKitExtensions.swift */; };
 		45830AB21CE9538B002FEA3D /* WeakReferenceSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45830AB11CE9538B002FEA3D /* WeakReferenceSet.swift */; };
 		45830AB31CE95458002FEA3D /* WeakReferenceSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45830AB11CE9538B002FEA3D /* WeakReferenceSet.swift */; };
+		458EE5D81D12EC35004A1942 /* AttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458EE5D71D12EC35004A1942 /* AttributedStringExtensions.swift */; };
+		458EE5D91D12EC35004A1942 /* AttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458EE5D71D12EC35004A1942 /* AttributedStringExtensions.swift */; };
+		458EE5E11D12F573004A1942 /* SilentBoxSplitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458EE5E01D12F573004A1942 /* SilentBoxSplitExtensions.swift */; };
+		458EE5E21D12F573004A1942 /* SilentBoxSplitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458EE5E01D12F573004A1942 /* SilentBoxSplitExtensions.swift */; };
+		458EE5E41D12FAB3004A1942 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458EE5E31D12FAB3004A1942 /* ArrayExtensions.swift */; };
+		458EE5E51D12FAB3004A1942 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458EE5E31D12FAB3004A1942 /* ArrayExtensions.swift */; };
 		459AC37C1CD3B8F300F2B57E /* ReferenceSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459AC37B1CD3B8F300F2B57E /* ReferenceSet.swift */; };
 		459AC37D1CD3BA7100F2B57E /* ReferenceSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459AC37B1CD3B8F300F2B57E /* ReferenceSet.swift */; };
 		459DB8DF1CD48C1D00C892D9 /* InternalUtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459DB8DE1CD48C1D00C892D9 /* InternalUtilityFunctions.swift */; };
@@ -61,6 +67,9 @@
 		45771AD81CD0E6430096947A /* SilentBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SilentBox.swift; sourceTree = "<group>"; };
 		45771B101CD0EAE10096947A /* EonilToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EonilToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45830AB11CE9538B002FEA3D /* WeakReferenceSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakReferenceSet.swift; sourceTree = "<group>"; };
+		458EE5D71D12EC35004A1942 /* AttributedStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringExtensions.swift; sourceTree = "<group>"; };
+		458EE5E01D12F573004A1942 /* SilentBoxSplitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SilentBoxSplitExtensions.swift; sourceTree = "<group>"; };
+		458EE5E31D12FAB3004A1942 /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		459AC37B1CD3B8F300F2B57E /* ReferenceSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferenceSet.swift; sourceTree = "<group>"; };
 		459DB8DE1CD48C1D00C892D9 /* InternalUtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternalUtilityFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,11 +130,14 @@
 				45771AC21CD0E3CC0096947A /* ObjectAddressID.swift */,
 				459AC37B1CD3B8F300F2B57E /* ReferenceSet.swift */,
 				45830AB11CE9538B002FEA3D /* WeakReferenceSet.swift */,
+				458EE5E31D12FAB3004A1942 /* ArrayExtensions.swift */,
 				4564D3861CD2CD39001265EA /* ColorExtensions.swift */,
+				458EE5D71D12EC35004A1942 /* AttributedStringExtensions.swift */,
 				459DB8DE1CD48C1D00C892D9 /* InternalUtilityFunctions.swift */,
 				455569321CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift */,
 				451C94DB1D053CEF00C5F640 /* StateManagement */,
 				45771AD41CD0E6430096947A /* LayoutBox */,
+				458EE5D31D12EC1C004A1942 /* AttributedStringExtensions */,
 				45771ACD1CD0E58F0096947A /* iOSOnly */,
 				45771AB81CD0E29F0096947A /* OSXOnly */,
 			);
@@ -156,8 +168,16 @@
 				45771AD61CD0E6430096947A /* BoxType.swift */,
 				45771AD71CD0E6430096947A /* BoxTypeCoreGraphicsExtensions.swift */,
 				45771AD81CD0E6430096947A /* SilentBox.swift */,
+				458EE5E01D12F573004A1942 /* SilentBoxSplitExtensions.swift */,
 			);
 			path = LayoutBox;
+			sourceTree = "<group>";
+		};
+		458EE5D31D12EC1C004A1942 /* AttributedStringExtensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AttributedStringExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,12 +298,15 @@
 				45830AB21CE9538B002FEA3D /* WeakReferenceSet.swift in Sources */,
 				455569331CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift in Sources */,
 				45771AD21CD0E5980096947A /* DisplayLinkUtilityMobile.swift in Sources */,
+				458EE5D81D12EC35004A1942 /* AttributedStringExtensions.swift in Sources */,
 				45771ADE1CD0E6640096947A /* BoxType.swift in Sources */,
 				459AC37C1CD3B8F300F2B57E /* ReferenceSet.swift in Sources */,
 				45771ADF1CD0E6640096947A /* BoxTypeCoreGraphicsExtensions.swift in Sources */,
 				45771AC61CD0E4B50096947A /* ViewInstaller.swift in Sources */,
 				45771ADD1CD0E6640096947A /* Box.swift in Sources */,
+				458EE5E41D12FAB3004A1942 /* ArrayExtensions.swift in Sources */,
 				459DB8DF1CD48C1D00C892D9 /* InternalUtilityFunctions.swift in Sources */,
+				458EE5E11D12F573004A1942 /* SilentBoxSplitExtensions.swift in Sources */,
 				45771AC51CD0E4B50096947A /* DisplayLinkUtility-OSX.swift in Sources */,
 				45771AE01CD0E6640096947A /* SilentBox.swift in Sources */,
 				45771AD31CD0E5980096947A /* UIKitExtensions.swift in Sources */,
@@ -305,11 +328,14 @@
 				45771B1A1CD0EB650096947A /* ObjectAddressID.swift in Sources */,
 				459AC37D1CD3BA7100F2B57E /* ReferenceSet.swift in Sources */,
 				45771B1E1CD0EB6A0096947A /* SilentBox.swift in Sources */,
+				458EE5D91D12EC35004A1942 /* AttributedStringExtensions.swift in Sources */,
 				45771B1D1CD0EB6A0096947A /* BoxTypeCoreGraphicsExtensions.swift in Sources */,
 				45771B191CD0EB650096947A /* ViewInstaller.swift in Sources */,
 				45771B1C1CD0EB6A0096947A /* BoxType.swift in Sources */,
 				451C94DF1D053CFC00C5F640 /* Version.swift in Sources */,
 				45830AB31CE95458002FEA3D /* WeakReferenceSet.swift in Sources */,
+				458EE5E21D12F573004A1942 /* SilentBoxSplitExtensions.swift in Sources */,
+				458EE5E51D12FAB3004A1942 /* ArrayExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
