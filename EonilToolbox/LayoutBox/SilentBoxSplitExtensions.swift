@@ -52,7 +52,7 @@ private extension SilentBoxPartition {
 }
 public extension SilentBox {
     private func splitInX<S: SequenceType where S.Generator.Element == CGFloat>(partitions: S) -> AnySequence<SilentBox> {
-        assert(partitions.reduce(0, combine: +) <= size.x)
+        assert(size.x - partitions.reduce(0, combine: +) > -0.1)
         return AnySequence { () -> AnyGenerator<SilentBox> in
             var pg = partitions.generate()
             var budget = self
@@ -65,7 +65,7 @@ public extension SilentBox {
         }
     }
     private func splitInY<S: SequenceType where S.Generator.Element == CGFloat>(partitions: S) -> AnySequence<SilentBox> {
-        assert(partitions.reduce(0, combine: +) <= size.y)
+        assert(size.y - partitions.reduce(0, combine: +) > -0.1)
         return AnySequence { () -> AnyGenerator<SilentBox> in
             var pg = partitions.generate()
             var budget = self
