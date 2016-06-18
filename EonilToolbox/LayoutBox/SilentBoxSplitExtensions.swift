@@ -82,7 +82,7 @@ public extension SilentBox {
         let totalRigidLength = partitions.map({ $0.rigidLength ?? 0 }).reduce(0, combine: +)
         let totalProportion = partitions.map({ $0.softProportion ?? 0 }).reduce(0, combine: +)
         let finalTotalCompressedRigidLength = Swift.min(totalRigidLength, size.x)
-        let finalRigidCompressionRatio = (finalTotalCompressedRigidLength == 0) ? 0 : (totalRigidLength / finalTotalCompressedRigidLength)
+        let finalRigidCompressionRatio = (finalTotalCompressedRigidLength == 0) ? 0 : (finalTotalCompressedRigidLength / totalRigidLength)
         let softAvailableLength = (totalProportion == 0) ? 0 : ((size.x - finalTotalCompressedRigidLength) / totalProportion)
         let partitionLengths = partitions.map({ (partition: SilentBoxPartition) -> CGFloat in
             switch partition {
@@ -98,7 +98,7 @@ public extension SilentBox {
         let totalRigidLength = partitions.map({ $0.rigidLength ?? 0 }).reduce(0, combine: +)
         let totalProportion = partitions.map({ $0.softProportion ?? 0 }).reduce(0, combine: +)
         let finalTotalCompressedRigidLength = Swift.min(totalRigidLength, size.y)
-        let finalRigidCompressionRatio = (finalTotalCompressedRigidLength == 0) ? 0 : (totalRigidLength / finalTotalCompressedRigidLength)
+        let finalRigidCompressionRatio = (finalTotalCompressedRigidLength == 0) ? 0 : (finalTotalCompressedRigidLength / totalRigidLength)
         let softAvailableLength = (totalProportion == 0) ? 0 : ((size.y - finalTotalCompressedRigidLength) / totalProportion)
         let partitionLengths = partitions.map({ (partition: SilentBoxPartition) -> CGFloat in
             switch partition {

@@ -64,6 +64,9 @@ public extension NSAttributedString {
         public func backgorundColored(color: UIColor) -> NSAttributedString {
             return attributed(name: NSBackgroundColorAttributeName, value: color)
         }
+        public func paragraphStyled(paragraphStyle: NSParagraphStyle) -> NSAttributedString {
+            return attributed(name: NSParagraphStyleAttributeName, value: (paragraphStyle.copy() as? NSParagraphStyle) ?? NSParagraphStyle())
+        }
     }
 #endif
 
