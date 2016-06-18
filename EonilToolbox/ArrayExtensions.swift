@@ -7,8 +7,8 @@
 //
 
 /// - Note: I'm not sure whether this interfaces are *ideal*.
-extension Array {
-    var entireRange: Range<Index> {
+public extension Array {
+    public var entireRange: Range<Index> {
         return startIndex..<endIndex
     }
     func splitFirst() -> (first: Element, ArraySlice<Element>) {
