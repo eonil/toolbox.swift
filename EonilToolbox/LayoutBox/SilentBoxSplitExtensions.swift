@@ -90,8 +90,10 @@ public extension SilentBox {
             case let .soft(proportion):     return proportion * softAvailableLength
             }
         })
-        let startingPoint = (size.x - (finalTotalCompressedRigidLength + softAvailableLength)) / 2
-        return Array(splitAtX(startingPoint).max.splitInX(partitionLengths))
+        let occupyingLength = finalTotalCompressedRigidLength + softAvailableLength
+        let startingPoint = min.x + (size.x - occupyingLength) / 2
+        let budgetArea = splitAtX(startingPoint).max
+        return Array(budgetArea.splitInX(partitionLengths))
     }
     public func splitInY(partitions: [SilentBoxPartition]) -> [SilentBox] {
         assert(size.y >= 0)
@@ -106,8 +108,10 @@ public extension SilentBox {
             case let .soft(proportion):     return proportion * softAvailableLength
             }
         })
-        let startingPoint = (size.y - (finalTotalCompressedRigidLength + softAvailableLength)) / 2
-        return Array(splitAtY(startingPoint).max.splitInY(partitionLengths))
+        let occupyingLength = finalTotalCompressedRigidLength + softAvailableLength
+        let startingPoint = min.y + (size.y - occupyingLength) / 2
+        let budgetArea = splitAtY(startingPoint).max
+        return Array(budgetArea.splitInY(partitionLengths))
     }
 }
 extension SilentBox {
