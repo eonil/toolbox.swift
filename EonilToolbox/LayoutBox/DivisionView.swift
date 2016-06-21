@@ -24,10 +24,20 @@ public enum DivisionViewPartitionMode {
 
 /// By default, all subviews will be treated as `rigid` box.
 /// If you want to put a `soft` box, you have to use a `setPartitionMode` function.
+/// 
+/// Excludes hidden views from layout calculation.
 public class DivisionView: UIView {
     private var partitionModeForSubviews = [DivisionViewPartitionMode]()
-    private(set) var axis = DivisionViewAxis.vertical
-    private(set) var alignment = DivisionAlignment.center
+    public var axis = DivisionViewAxis.vertical {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    public var alignment = DivisionAlignment.center {
+        didSet {
+            setNeedsLayout()
+        }
+    }
 
     private func getIndexOfSubview(subview: UIView) -> Int {
         guard let index = subviews.indexOf(subview) else { fatalError("The subview could not be found in `subviews` array.") }
@@ -54,7 +64,7 @@ public class DivisionView: UIView {
             var w = CGFloat(0)
             var h = CGFloat(0)
             for i in 0..<subviews.count {
-                let sz1 = subviews[i].sizeThatFits(sz)
+                let sz1 = subviews[i].hidden ? CGSize.zero : subviews[i].sizeThatFits(sz)
                 w += sz1.width
                 h = max(sz1.height, h)
             }
@@ -65,7 +75,7 @@ public class DivisionView: UIView {
             var w = CGFloat(0)
             var h = CGFloat(0)
             for i in 0..<subviews.count {
-                let sz1 = subviews[i].sizeThatFits(sz)
+                let sz1 = subviews[i].hidden ? CGSize.zero : subviews[i].sizeThatFits(sz)
                 w = max(sz1.width, w)
                 h += sz1.height
             }
@@ -94,9 +104,10 @@ public class DivisionView: UIView {
                 let fsz = v.sizeThatFits(fit)
                 let w = fsz.width
                 let p1 = {
+                    guard v.hidden == false else { return .rigid(length: 0) }
                     switch p {
-                    case .rigid:    return SilentBoxPartition.rigid(length: w)
-                    case .soft:     return SilentBoxPartition.soft(proportion: w)
+                    case .rigid:    return .rigid(length: w)
+                    case .soft:     return .soft(proportion: w)
                     }
                 }() as SilentBoxPartition
                 ps1.append(p1)
@@ -126,9 +137,10 @@ public class DivisionView: UIView {
                 let fsz = v.sizeThatFits(fit)
                 let h = fsz.height
                 let p1 = {
+                    guard v.hidden == false else { return .rigid(length: 0) }
                     switch p {
-                    case .rigid:    return SilentBoxPartition.rigid(length: h)
-                    case .soft:     return SilentBoxPartition.soft(proportion: h)
+                    case .rigid:    return .rigid(length: h)
+                    case .soft:     return .soft(proportion: h)
                     }
                 }() as SilentBoxPartition
                 ps1.append(p1)
@@ -152,13 +164,14 @@ public class DivisionView: UIView {
 public final class DivisionPlaceholderView: UIView {
     /// We need to store explicit size to get reliable result
     /// because `frame` will be changed after layout.
-    let holdingSize: CGSize
-    public init(holdingSize: CGSize) {
-        self.holdingSize = holdingSize
-        super.init(frame: CGRect.zero)
+    public var holdingSize: CGSize = CGSize.zero {
+        didSet {
+            setNeedsLayout()
+        }
     }
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("IB/SB is not supported.")
+    convenience init(holdingSize: CGSize) {
+        self.init()
+        self.holdingSize = holdingSize
     }
     public override func sizeThatFits(size: CGSize) -> CGSize {
         return holdingSize
