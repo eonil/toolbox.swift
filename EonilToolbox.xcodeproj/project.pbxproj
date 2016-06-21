@@ -45,6 +45,8 @@
 		459DB8E01CD48CBE00C892D9 /* InternalUtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459DB8DE1CD48C1D00C892D9 /* InternalUtilityFunctions.swift */; };
 		45D1B9911D16CF0300B9F7C3 /* EonilToolboxTests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D1B9901D16CF0300B9F7C3 /* EonilToolboxTests_macOS.swift */; };
 		45D1B9931D16CF0300B9F7C3 /* EonilToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45771B101CD0EAE10096947A /* EonilToolbox.framework */; };
+		45D1B9C71D1865A300B9F7C3 /* DivisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D1B9C61D1865A200B9F7C3 /* DivisionView.swift */; };
+		45D1B9C81D1865A300B9F7C3 /* DivisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D1B9C61D1865A200B9F7C3 /* DivisionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,7 @@
 		45D1B98E1D16CF0300B9F7C3 /* EonilToolboxTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EonilToolboxTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45D1B9901D16CF0300B9F7C3 /* EonilToolboxTests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EonilToolboxTests_macOS.swift; sourceTree = "<group>"; };
 		45D1B9921D16CF0300B9F7C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45D1B9C61D1865A200B9F7C3 /* DivisionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DivisionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +197,7 @@
 				45771AD71CD0E6430096947A /* BoxTypeCoreGraphicsExtensions.swift */,
 				45771AD81CD0E6430096947A /* SilentBox.swift */,
 				458EE5E01D12F573004A1942 /* SilentBoxSplitExtensions.swift */,
+				45D1B9C61D1865A200B9F7C3 /* DivisionView.swift */,
 			);
 			path = LayoutBox;
 			sourceTree = "<group>";
@@ -364,6 +368,7 @@
 				45771AD21CD0E5980096947A /* DisplayLinkUtilityMobile.swift in Sources */,
 				458EE5D81D12EC35004A1942 /* AttributedStringExtensions.swift in Sources */,
 				45771ADE1CD0E6640096947A /* BoxType.swift in Sources */,
+				45D1B9C71D1865A300B9F7C3 /* DivisionView.swift in Sources */,
 				459AC37C1CD3B8F300F2B57E /* ReferenceSet.swift in Sources */,
 				45771ADF1CD0E6640096947A /* BoxTypeCoreGraphicsExtensions.swift in Sources */,
 				45771AC61CD0E4B50096947A /* ViewInstaller.swift in Sources */,
@@ -400,6 +405,7 @@
 				45830AB31CE95458002FEA3D /* WeakReferenceSet.swift in Sources */,
 				458EE5E21D12F573004A1942 /* SilentBoxSplitExtensions.swift in Sources */,
 				458EE5E51D12FAB3004A1942 /* ArrayExtensions.swift in Sources */,
+				45D1B9C81D1865A300B9F7C3 /* DivisionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +663,7 @@
 				45D1B9971D16CF0300B9F7C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
