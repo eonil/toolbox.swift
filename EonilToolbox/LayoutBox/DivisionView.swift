@@ -13,6 +13,10 @@ public enum DivisionViewAxis {
     case horizontal
     case vertical
 }
+public enum DivisionAlignment {
+    case center
+    case fill
+}
 public enum DivisionViewPartitionMode {
     case rigid
     case soft
@@ -23,6 +27,7 @@ public enum DivisionViewPartitionMode {
 public class DivisionView: UIView {
     private var partitionModeForSubviews = [DivisionViewPartitionMode]()
     private(set) var axis = DivisionViewAxis.vertical
+    private(set) var alignment = DivisionAlignment.center
 
     private func getIndexOfSubview(subview: UIView) -> Int {
         guard let index = subviews.indexOf(subview) else { fatalError("The subview could not be found in `subviews` array.") }
@@ -80,12 +85,14 @@ public class DivisionView: UIView {
         let box = bounds.toBox().toSilentBox()
         switch axis {
         case .horizontal:
-            var ps1 = [SilentBoxPartition]()
+            let fit = CGSize(width: CGFloat.max, height: bounds.height)
+            var ps1 = [SilentBoxPartition](minimumCapacity: subviews.count)
+            var fitszs = [CGSize](minimumCapacity: subviews.count)
             for i in 0..<subviews.count {
                 let v = subviews[i]
                 let p = partitionModeForSubviews[i]
-                let sz = v.sizeThatFits(CGSize(width: CGFloat.max, height: bounds.height))
-                let w = sz.width
+                let fsz = v.sizeThatFits(fit)
+                let w = fsz.width
                 let p1 = {
                     switch p {
                     case .rigid:    return SilentBoxPartition.rigid(length: w)
@@ -93,20 +100,31 @@ public class DivisionView: UIView {
                     }
                 }() as SilentBoxPartition
                 ps1.append(p1)
+                fitszs.append(fsz)
             }
             let boxes = box.splitInX(ps1)
             for i in 0..<boxes.count {
-                let b = boxes[i]
+                var b = boxes[i]
+                switch alignment {
+                case .center:
+                    b = b.shrinkenYTo(fitszs[i].height)
+                case .fill:
+                    break
+                }
                 subviews[i].frame = b.toCGRect()
             }
 
         case .vertical:
-            var ps1 = [SilentBoxPartition]()
+            let fit = CGSize(width: bounds.width, height: CGFloat.max)
+            var ps1 = [SilentBoxPartition](minimumCapacity: subviews.count)
+            var fitszs = [CGSize](minimumCapacity: subviews.count)
+            ps1.reserveCapacity(subviews.count)
+            fitszs.reserveCapacity(subviews.count)
             for i in 0..<subviews.count {
                 let v = subviews[i]
                 let p = partitionModeForSubviews[i]
-                let sz = v.sizeThatFits(CGSize(width: bounds.width, height: CGFloat.max))
-                let h = sz.height
+                let fsz = v.sizeThatFits(fit)
+                let h = fsz.height
                 let p1 = {
                     switch p {
                     case .rigid:    return SilentBoxPartition.rigid(length: h)
@@ -114,17 +132,61 @@ public class DivisionView: UIView {
                     }
                 }() as SilentBoxPartition
                 ps1.append(p1)
+                fitszs.append(fsz)
             }
             let boxes = box.splitInY(ps1)
             for i in 0..<boxes.count {
-                let b = boxes[i]
+                var b = boxes[i]
+                switch alignment {
+                case .center:
+                    b = b.shrinkenXTo(fitszs[i].width)
+                case .fill:
+                    break
+                }
                 subviews[i].frame = b.toCGRect()
             }
         }
     }
 }
 
+public final class DivisionPlaceholderView: UIView {
+    /// We need to store explicit size to get reliable result
+    /// because `frame` will be changed after layout.
+    let holdingSize: CGSize
+    public init(holdingSize: CGSize) {
+        self.holdingSize = holdingSize
+        super.init(frame: CGRect.zero)
+    }
+    public required init?(coder aDecoder: NSCoder) {
+        fatalError("IB/SB is not supported.")
+    }
+    public override func sizeThatFits(size: CGSize) -> CGSize {
+        return holdingSize
+    }
+}
 
+public final class DivisionSpaceView: UIView {
+    /// We need to store explicit size to get reliable result
+    /// because `frame` will be changed after layout.
+    let fittingSize: CGSize
+    public init(fittingSize: CGSize) {
+        self.fittingSize = fittingSize
+        super.init(frame: CGRect.zero)
+    }
+    public required init?(coder aDecoder: NSCoder) {
+        fatalError("IB/SB is not supported.")
+    }
+    public override func sizeThatFits(size: CGSize) -> CGSize {
+        return fittingSize
+    }
+}
+
+private extension Array {
+    init(minimumCapacity: Int) {
+        self = [Element]()
+        reserveCapacity(minimumCapacity)
+    }
+}
 
 
 

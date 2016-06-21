@@ -47,6 +47,8 @@
 		45D1B9931D16CF0300B9F7C3 /* EonilToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45771B101CD0EAE10096947A /* EonilToolbox.framework */; };
 		45D1B9C71D1865A300B9F7C3 /* DivisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D1B9C61D1865A200B9F7C3 /* DivisionView.swift */; };
 		45D1B9C81D1865A300B9F7C3 /* DivisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D1B9C61D1865A200B9F7C3 /* DivisionView.swift */; };
+		45D1B9DD1D196B8500B9F7C3 /* DivisionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D1B9DC1D196B8500B9F7C3 /* DivisionViewExtensions.swift */; };
+		45D1B9E11D19715100B9F7C3 /* MaxSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D1B9E01D19715100B9F7C3 /* MaxSizeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		45D1B9901D16CF0300B9F7C3 /* EonilToolboxTests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EonilToolboxTests_macOS.swift; sourceTree = "<group>"; };
 		45D1B9921D16CF0300B9F7C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45D1B9C61D1865A200B9F7C3 /* DivisionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DivisionView.swift; sourceTree = "<group>"; };
+		45D1B9DC1D196B8500B9F7C3 /* DivisionViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DivisionViewExtensions.swift; sourceTree = "<group>"; };
+		45D1B9E01D19715100B9F7C3 /* MaxSizeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxSizeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +202,8 @@
 				45771AD81CD0E6430096947A /* SilentBox.swift */,
 				458EE5E01D12F573004A1942 /* SilentBoxSplitExtensions.swift */,
 				45D1B9C61D1865A200B9F7C3 /* DivisionView.swift */,
+				45D1B9DC1D196B8500B9F7C3 /* DivisionViewExtensions.swift */,
+				45D1B9E01D19715100B9F7C3 /* MaxSizeView.swift */,
 			);
 			path = LayoutBox;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 				45771AD21CD0E5980096947A /* DisplayLinkUtilityMobile.swift in Sources */,
 				458EE5D81D12EC35004A1942 /* AttributedStringExtensions.swift in Sources */,
 				45771ADE1CD0E6640096947A /* BoxType.swift in Sources */,
+				45D1B9DD1D196B8500B9F7C3 /* DivisionViewExtensions.swift in Sources */,
 				45D1B9C71D1865A300B9F7C3 /* DivisionView.swift in Sources */,
 				459AC37C1CD3B8F300F2B57E /* ReferenceSet.swift in Sources */,
 				45771ADF1CD0E6640096947A /* BoxTypeCoreGraphicsExtensions.swift in Sources */,
@@ -381,6 +388,7 @@
 				45771AD31CD0E5980096947A /* UIKitExtensions.swift in Sources */,
 				4564D3871CD2CD39001265EA /* ColorExtensions.swift in Sources */,
 				451C94DE1D053CFC00C5F640 /* Version.swift in Sources */,
+				45D1B9E11D19715100B9F7C3 /* MaxSizeView.swift in Sources */,
 				451C93BD1D0331A900C5F640 /* DisplayLinkUtility-iOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
