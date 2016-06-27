@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 public enum DivisionViewAxis {
     case horizontal
@@ -21,6 +20,9 @@ public enum DivisionViewPartitionMode {
     case rigid
     case soft
 }
+
+#if os(iOS)
+import UIKit
 
 /// By default, all subviews will be treated as `rigid` box.
 /// If you want to put a `soft` box, you have to use a `setPartitionMode` function.
@@ -200,6 +202,8 @@ private extension Array {
         reserveCapacity(minimumCapacity)
     }
 }
+
+#endif
 
 
 
