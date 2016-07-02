@@ -123,6 +123,10 @@ extension SilentBox {
         let a = splitInY([min, center, max])
         return (a[0], a[1], a[2])
     }
+    public func splitInY(min: SilentBoxPartition, _ max: SilentBoxPartition) -> (min: SilentBox, max: SilentBox) {
+        let a = splitInY([min, max])
+        return (a[0], a[1])
+    }
 }
 extension SilentBox {
     public func splitInX<A: SilentBoxPartitionType, B: SilentBoxPartitionType, C: SilentBoxPartitionType>(min: A, _ center: B, _ max: C) -> (min: SilentBox, center: SilentBox, max: SilentBox) {
