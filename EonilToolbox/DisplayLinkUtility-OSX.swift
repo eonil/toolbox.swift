@@ -11,7 +11,7 @@
     import AppKit
     import CoreGraphics
     import CoreVideo
-    public enum DisplayLinkError: ErrorType {
+    public enum DisplayLinkError: ErrorProtocol {
         case CannotCreateLink
         case CannotSetLinkCallback
         case CoreVideoError(CVReturn)
@@ -78,13 +78,13 @@
             guard result == kCVReturnSuccess else { throw Error.CoreVideoError(result) }
         }
     }
-
+    
     private func displayLinkDidOutput(displayLink: CVDisplayLink,
                                       _ inNow: UnsafePointer<CVTimeStamp>,
                                       _ inOutputTime: UnsafePointer<CVTimeStamp>,
                                       _ flagsIn: CVOptionFlags,
                                       _ flagsOut: UnsafeMutablePointer<CVOptionFlags>,
-                                      _ displayLinkContext: UnsafeMutablePointer<Void>) -> CVReturn {
+                                      _ displayLinkContext: UnsafeMutablePointer<Void>?) -> CVReturn {
 
         DisplayLinkUtility.callback()
         return kCVReturnSuccess

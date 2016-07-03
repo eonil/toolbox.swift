@@ -7,25 +7,25 @@
 //
 
 enum ViewInstallerState {
-    case Deinstalling
-    case Uninstalled
-    case Installing
-    case Installed
+    case deinstalling
+    case uninstalled
+    case installing
+    case installed
 }
 public struct ViewInstaller {
-    private(set) var state = ViewInstallerState.Uninstalled
+    private(set) var state = ViewInstallerState.uninstalled
     public init() {
     }
-    public mutating func installIfNeeded(@noescape f: ()->()) {
-        guard state == .Uninstalled else { return }
-        state = .Installing
+    public mutating func installIfNeeded(_ f: @noescape()->()) {
+        guard state == .uninstalled else { return }
+        state = .installing
         f()
-        state = .Installed
+        state = .installed
     }
-    public mutating func deinstallIfNeeded(@noescape f: ()->()) {
-        guard state == .Installed else { return }
-        state = .Deinstalling
+    public mutating func deinstallIfNeeded(_ f: @noescape()->()) {
+        guard state == .installed else { return }
+        state = .deinstalling
         f()
-        state = .Uninstalled
+        state = .uninstalled
     }
 }

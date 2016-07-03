@@ -34,7 +34,7 @@ public extension Version {
 extension Version: CustomDebugStringConvertible {
     public var debugDescription: String {
         get {
-            let id = String(format: "%x", ObjectIdentifier(addressID).uintValue)
+            let id = String(format: "%x", UInt(ObjectIdentifier(addressID)))
             let rev = String(format: "%i", revisionCountForDebuggingOnly)
             return "(" + id + "/" + rev + ")"
         }

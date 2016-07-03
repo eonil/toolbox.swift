@@ -26,7 +26,7 @@ public struct ObjectAddressID: Hashable {
 }
 extension ObjectAddressID: CustomStringConvertible {
     public var description: String {
-        get { return "(ObjectID: 0x" + String(format: "%X", ObjectIdentifier(dummy).uintValue) + ")" }
+        get { return "(ObjectID: 0x" + String(format: "%X", UInt(ObjectIdentifier(dummy))) + ")" }
     }
 }
 extension ObjectAddressID: CustomDebugStringConvertible {

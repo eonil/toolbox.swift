@@ -19,10 +19,10 @@ public final class MaxSizeView: UIView {
     }
     /// - Returns:
     ///     Maximum size of contained views separately in both axis.
-    public override func sizeThatFits(size: CGSize) -> CGSize {
+    public override func sizeThatFits(_ size: CGSize) -> CGSize {
         let reducedSize = size.reduced(edgeInsets)
-        let maxWidth = subviews.map { $0.sizeThatFits(reducedSize).width }.maxElement() ?? 0
-        let maxHeight = subviews.map { $0.sizeThatFits(reducedSize).height }.maxElement() ?? 0
+        let maxWidth = subviews.map { $0.sizeThatFits(reducedSize).width }.max() ?? 0
+        let maxHeight = subviews.map { $0.sizeThatFits(reducedSize).height }.max() ?? 0
         let finalSize = CGSize(width: maxWidth + edgeInsets.width, height: maxHeight + edgeInsets.height)
         return finalSize
     }
@@ -35,11 +35,11 @@ public final class MaxSizeView: UIView {
 }
 
 private extension CGSize {
-    mutating func reduce(edgeInsets: UIEdgeInsets) {
+    mutating func reduce(_ edgeInsets: UIEdgeInsets) {
         width = max(0, width - edgeInsets.width)
         height = max(0, height - edgeInsets.height)
     }
-    func reduced(edgeInsets: UIEdgeInsets) -> CGSize {
+    func reduced(_ edgeInsets: UIEdgeInsets) -> CGSize {
         var copy = self
         copy.reduce(edgeInsets)
         return copy

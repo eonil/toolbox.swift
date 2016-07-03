@@ -41,15 +41,15 @@ public class DivisionView: UIView {
         }
     }
 
-    private func getIndexOfSubview(subview: UIView) -> Int {
-        guard let index = subviews.indexOf(subview) else { fatalError("The subview could not be found in `subviews` array.") }
+    private func getIndexOfSubview(_ subview: UIView) -> Int {
+        guard let index = subviews.index(of: subview) else { fatalError("The subview could not be found in `subviews` array.") }
         return index
     }
-    public func partitionModeFor(subview subview: UIView) -> DivisionViewPartitionMode {
+    public func partitionModeFor(subview: UIView) -> DivisionViewPartitionMode {
         precondition(subview.superview === self)
         return partitionModeForSubviews[getIndexOfSubview(subview)]
     }
-    public func setPartitionMode(mode: DivisionViewPartitionMode, for subview: UIView) {
+    public func setPartitionMode(_ mode: DivisionViewPartitionMode, for subview: UIView) {
         precondition(subview.superview === self)
         partitionModeForSubviews[getIndexOfSubview(subview)] = mode
     }
@@ -59,37 +59,37 @@ public class DivisionView: UIView {
     ///     Implementation should avoid depending on *current state* of
     ///     this view. So it does not use `bounds`, `frame` or somthing 
     ///     like that at all to measure fitting size.
-    public override func sizeThatFits(size: CGSize) -> CGSize {
+    public override func sizeThatFits(_ size: CGSize) -> CGSize {
         switch axis {
         case .horizontal:
-            let sz = CGSize(width: CGFloat.max, height: size.height)
+            let sz = CGSize(width: CGFloat.greatestFiniteMagnitude, height: size.height)
             var w = CGFloat(0)
             var h = CGFloat(0)
             for i in 0..<subviews.count {
-                let sz1 = subviews[i].hidden ? CGSize.zero : subviews[i].sizeThatFits(sz)
+                let sz1 = subviews[i].isHidden ? CGSize.zero : subviews[i].sizeThatFits(sz)
                 w += sz1.width
                 h = max(sz1.height, h)
             }
             return CGSize(width: w, height: h)
 
         case .vertical:
-            let sz = CGSize(width: size.width, height: CGFloat.max)
+            let sz = CGSize(width: size.width, height: CGFloat.greatestFiniteMagnitude)
             var w = CGFloat(0)
             var h = CGFloat(0)
             for i in 0..<subviews.count {
-                let sz1 = subviews[i].hidden ? CGSize.zero : subviews[i].sizeThatFits(sz)
+                let sz1 = subviews[i].isHidden ? CGSize.zero : subviews[i].sizeThatFits(sz)
                 w = max(sz1.width, w)
                 h += sz1.height
             }
             return CGSize(width: w, height: h)
         }
     }
-    public override func didAddSubview(subview: UIView) {
+    public override func didAddSubview(_ subview: UIView) {
         super.didAddSubview(subview)
-        partitionModeForSubviews.insert(.rigid, atIndex: getIndexOfSubview(subview))
+        partitionModeForSubviews.insert(.rigid, at: getIndexOfSubview(subview))
     }
-    public override func willRemoveSubview(subview: UIView) {
-        partitionModeForSubviews.removeAtIndex(getIndexOfSubview(subview))
+    public override func willRemoveSubview(_ subview: UIView) {
+        partitionModeForSubviews.remove(at: getIndexOfSubview(subview))
         super.willRemoveSubview(subview)
     }
     public override func layoutSubviews() {
@@ -97,7 +97,7 @@ public class DivisionView: UIView {
         let box = bounds.toBox().toSilentBox()
         switch axis {
         case .horizontal:
-            let fit = CGSize(width: CGFloat.max, height: bounds.height)
+            let fit = CGSize(width: CGFloat.greatestFiniteMagnitude, height: bounds.height)
             var ps1 = [SilentBoxPartition](minimumCapacity: subviews.count)
             var fitszs = [CGSize](minimumCapacity: subviews.count)
             for i in 0..<subviews.count {
@@ -106,7 +106,7 @@ public class DivisionView: UIView {
                 let fsz = v.sizeThatFits(fit)
                 let w = fsz.width
                 let p1 = {
-                    guard v.hidden == false else { return .rigid(length: 0) }
+                    guard v.isHidden == false else { return .rigid(length: 0) }
                     switch p {
                     case .rigid:    return .rigid(length: w)
                     case .soft:     return .soft(proportion: w)
@@ -128,7 +128,7 @@ public class DivisionView: UIView {
             }
 
         case .vertical:
-            let fit = CGSize(width: bounds.width, height: CGFloat.max)
+            let fit = CGSize(width: bounds.width, height: CGFloat.greatestFiniteMagnitude)
             var ps1 = [SilentBoxPartition](minimumCapacity: subviews.count)
             var fitszs = [CGSize](minimumCapacity: subviews.count)
             ps1.reserveCapacity(subviews.count)
@@ -139,7 +139,7 @@ public class DivisionView: UIView {
                 let fsz = v.sizeThatFits(fit)
                 let h = fsz.height
                 let p1 = {
-                    guard v.hidden == false else { return .rigid(length: 0) }
+                    guard v.isHidden == false else { return .rigid(length: 0) }
                     switch p {
                     case .rigid:    return .rigid(length: h)
                     case .soft:     return .soft(proportion: h)
@@ -175,7 +175,7 @@ public final class DivisionPlaceholderView: UIView {
         self.init()
         self.holdingSize = holdingSize
     }
-    public override func sizeThatFits(size: CGSize) -> CGSize {
+    public override func sizeThatFits(_ size: CGSize) -> CGSize {
         return holdingSize
     }
 }
@@ -191,7 +191,7 @@ public final class DivisionSpaceView: UIView {
     public required init?(coder aDecoder: NSCoder) {
         fatalError("IB/SB is not supported.")
     }
-    public override func sizeThatFits(size: CGSize) -> CGSize {
+    public override func sizeThatFits(_ size: CGSize) -> CGSize {
         return fittingSize
     }
 }

@@ -8,7 +8,7 @@
 
 /// - Note: I'm not sure whether this interfaces are *ideal*.
 public extension Array {
-    public var entireRange: Range<Index> {
+    public var entireRange: CountableRange<Index> {
         return startIndex..<endIndex
     }
     func splitFirst() -> (first: Element, ArraySlice<Element>) {
@@ -22,13 +22,13 @@ extension ArraySlice {
     func splitFirst() -> (first: Element, ArraySlice<Element>) {
         switch count {
         case 0:     fatalError("You cannot split an array with no element.")
-        default:    return (self[0], self[0..<count.predecessor()])
+        default:    return (self[0], self[0..<(count - 1)])
         }
     }
     func splitLast() -> (ArraySlice<Element>, last: Element) {
         switch count {
         case 0:     fatalError("You cannot split an array with no element.")
-        default:    return (self[0..<count.predecessor()], self[count.predecessor()])
+        default:    return (self[0..<(count - 1)], self[(count - 1)])
         }
     }
 }

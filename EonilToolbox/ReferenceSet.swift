@@ -13,10 +13,10 @@ public struct ReferenceSet<T: AnyObject>: Hashable {
     public var count: Int {
         get { return valueSet.count }
     }
-    public mutating func insert(member: T) {
+    public mutating func insert(_ member: T) {
         valueSet.insert(ReferenceEqualityBox(member))
     }
-    public mutating func remove(member: T) -> T? {
+    public mutating func remove(_ member: T) -> T? {
         return valueSet.remove(ReferenceEqualityBox(member))?.reference
     }
     public var hashValue: Int {
