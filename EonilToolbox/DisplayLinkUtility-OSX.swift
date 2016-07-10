@@ -20,7 +20,7 @@
         private typealias Error = DisplayLinkError
         private static var linkWrapper: CVDisplayLinkWrapper?
         private static var handlers = Dictionary<ObjectIdentifier, ()->()>()
-        public static func installMainScreenHandler(id: ObjectIdentifier, f: ()->()) throws {
+        public static func installMainScreenHandler(id: ObjectIdentifier, _ f: ()->()) throws {
             assertMainThread()
             assert(handlers[id] == nil)
 
