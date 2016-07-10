@@ -20,6 +20,11 @@
         private typealias Error = DisplayLinkError
         private static var linkWrapper: CVDisplayLinkWrapper?
         private static var handlers = Dictionary<ObjectIdentifier, ()->()>()
+
+        /// - Parameter f:
+        ///     Observer which will be calledon v-sync.
+        ///     This can be called from any thread. You're responsible to
+        ///     redirect the signal to main thread if needed.
         public static func installMainScreenHandler(id: ObjectIdentifier, _ f: ()->()) throws {
             assertMainThread()
             assert(handlers[id] == nil)
