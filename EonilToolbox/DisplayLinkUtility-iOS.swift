@@ -28,8 +28,8 @@
                 // So we need a proxy to break retain cycle.
                 link = CADisplayLink(target: proxy, selector: #selector(TargetProxy.TOOLBOX_onTick(_:)))
                 guard let link = link else { throw Error.cannotCreateLink }
-                link.add(to: RunLoop.main(), forMode: RunLoopMode.commonModes.rawValue)
-                link.add(to: RunLoop.main(), forMode: UITrackingRunLoopMode)
+                link.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
+                link.add(to: RunLoop.main, forMode: RunLoopMode(rawValue: UITrackingRunLoopMode))
             }
             handlers[id] = f
         }
@@ -45,8 +45,8 @@
                 guard let link = moved else {
                     fatalError("Display-link is missing...")
                 }
-                link.remove(from: RunLoop.main(), forMode: UITrackingRunLoopMode)
-                link.remove(from: RunLoop.main(), forMode: RunLoopMode.commonModes.rawValue)
+                link.remove(from: RunLoop.main, forMode: RunLoopMode(rawValue: UITrackingRunLoopMode))
+                link.remove(from: RunLoop.main, forMode: RunLoopMode.commonModes)
             }
         }
         private static func callback() {

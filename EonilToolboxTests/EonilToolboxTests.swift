@@ -1,15 +1,15 @@
 //
-//  EonilToolboxTests_macOS.swift
-//  EonilToolboxTests-macOS
+//  EonilToolboxTests.swift
+//  EonilToolbox
 //
-//  Created by Hoon H. on 2016/06/19.
+//  Created by Hoon H. on 7/16/16.
 //  Copyright © 2016 Eonil. All rights reserved.
 //
 
 import XCTest
 @testable import EonilToolbox
 
-class EonilToolboxTests_macOS: XCTestCase {
+class EonilToolboxTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

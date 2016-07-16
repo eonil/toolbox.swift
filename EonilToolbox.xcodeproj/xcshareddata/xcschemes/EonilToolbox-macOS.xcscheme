@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45771B0F1CD0EAE10096947A"
+               BlueprintIdentifier = "B50A72FD1D39F23D000C23FC"
                BuildableName = "EonilToolbox.framework"
-               BlueprintName = "EonilToolbox-OSX"
+               BlueprintName = "EonilToolbox-macOS"
                ReferencedContainer = "container:EonilToolbox.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45D1B98D1D16CF0300B9F7C3"
-               BuildableName = "EonilToolboxTests-macOS.xctest"
-               BlueprintName = "EonilToolboxTests-macOS"
+               BlueprintIdentifier = "B50A73051D39F23E000C23FC"
+               BuildableName = "EonilToolbox-macOSTests.xctest"
+               BlueprintName = "EonilToolbox-macOSTests"
                ReferencedContainer = "container:EonilToolbox.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45771B0F1CD0EAE10096947A"
+            BlueprintIdentifier = "B50A72FD1D39F23D000C23FC"
             BuildableName = "EonilToolbox.framework"
-            BlueprintName = "EonilToolbox-OSX"
+            BlueprintName = "EonilToolbox-macOS"
             ReferencedContainer = "container:EonilToolbox.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45771B0F1CD0EAE10096947A"
+            BlueprintIdentifier = "B50A72FD1D39F23D000C23FC"
             BuildableName = "EonilToolbox.framework"
-            BlueprintName = "EonilToolbox-OSX"
+            BlueprintName = "EonilToolbox-macOS"
             ReferencedContainer = "container:EonilToolbox.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45771B0F1CD0EAE10096947A"
+            BlueprintIdentifier = "B50A72FD1D39F23D000C23FC"
             BuildableName = "EonilToolbox.framework"
-            BlueprintName = "EonilToolbox-OSX"
+            BlueprintName = "EonilToolbox-macOS"
             ReferencedContainer = "container:EonilToolbox.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

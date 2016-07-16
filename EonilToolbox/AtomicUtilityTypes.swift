@@ -6,6 +6,7 @@
 //  Copyright © 2016 Eonil. All rights reserved.
 //
 
+import Darwin
 import Foundation
 
 public enum AtomicError: ErrorProtocol {

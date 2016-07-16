@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45771A9C1CD0E1A30096947A"
+               BlueprintIdentifier = "B541A6E21D39EE8600F052CE"
                BuildableName = "EonilToolbox.framework"
                BlueprintName = "EonilToolbox-iOS"
                ReferencedContainer = "container:EonilToolbox.xcodeproj">
@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B541A6EA1D39EE8600F052CE"
+               BuildableName = "EonilToolbox-iOSTests.xctest"
+               BlueprintName = "EonilToolbox-iOSTests"
+               ReferencedContainer = "container:EonilToolbox.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "B541A6E21D39EE8600F052CE"
+            BuildableName = "EonilToolbox.framework"
+            BlueprintName = "EonilToolbox-iOS"
+            ReferencedContainer = "container:EonilToolbox.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -45,7 +64,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45771A9C1CD0E1A30096947A"
+            BlueprintIdentifier = "B541A6E21D39EE8600F052CE"
             BuildableName = "EonilToolbox.framework"
             BlueprintName = "EonilToolbox-iOS"
             ReferencedContainer = "container:EonilToolbox.xcodeproj">
@@ -63,7 +82,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45771A9C1CD0E1A30096947A"
+            BlueprintIdentifier = "B541A6E21D39EE8600F052CE"
             BuildableName = "EonilToolbox.framework"
             BlueprintName = "EonilToolbox-iOS"
             ReferencedContainer = "container:EonilToolbox.xcodeproj">
