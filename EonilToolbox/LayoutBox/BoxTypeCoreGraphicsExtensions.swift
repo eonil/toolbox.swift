@@ -22,7 +22,7 @@ public protocol CGFloatConvertibleBoxScalarType: BoxScalarType {
         init(_ value: CGFloat)
         func toCGFloat() -> CGFloat
 }
-extension CGFloat:CGFloatConvertibleBoxScalarType {
+extension CGFloat: CGFloatConvertibleBoxScalarType {
         public init(_ value: CGFloat) {
                 self = value
         }
