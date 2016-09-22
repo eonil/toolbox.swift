@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 public extension UIViewController {
-    public func addChildViewControllerImmediately(childViewController: UIViewController) {
+    public func addChildViewControllerImmediately(_ childViewController: UIViewController) {
         addChildViewController(childViewController)
         view.addSubview(childViewController.view)
-        childViewController.didMoveToParentViewController(self)
+        childViewController.didMove(toParentViewController: self)
     }
 }
 

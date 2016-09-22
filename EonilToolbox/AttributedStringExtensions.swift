@@ -15,13 +15,13 @@ public extension String {
 }
 
 public extension NSAttributedString {
-    private func attributed(attributes: [String: AnyObject]) -> NSAttributedString {
+    fileprivate func attributed(_ attributes: [String: AnyObject]) -> NSAttributedString {
         let newAttributedString = NSMutableAttributedString(attributedString: self)
         let wholeRange = NSRange(location: 0, length: length)
         newAttributedString.addAttributes(attributes, range: wholeRange)
         return NSAttributedString(attributedString: newAttributedString)
     }
-    private func attributed(name name: String, value: AnyObject) -> NSAttributedString {
+    fileprivate func attributed(name: String, value: AnyObject) -> NSAttributedString {
         return attributed([name: value])
     }
 }
@@ -29,42 +29,42 @@ public extension NSAttributedString {
 #if os(iOS)
     import UIKit
     public extension NSAttributedString {
-        public enum Error: ErrorType {
-            case CannotFindFontFor(name: String, size: CGFloat)
+        public enum Error: Swift.Error {
+            case cannotFindFontFor(name: String, size: CGFloat)
         }
         public enum FontSize {
-            case System
-            case SmallSystem
-            case Label
-            case Button
+            case system
+            case smallSystem
+            case label
+            case button
 
-            private func getNumber() -> CGFloat {
+            fileprivate func getNumber() -> CGFloat {
                 switch self {
-                case .System:       return UIFont.systemFontSize()
-                case .SmallSystem:  return UIFont.smallSystemFontSize()
-                case .Label:        return UIFont.labelFontSize()
-                case .Button:       return UIFont.buttonFontSize()
+                case .system:       return UIFont.systemFontSize
+                case .smallSystem:  return UIFont.smallSystemFontSize
+                case .label:        return UIFont.labelFontSize
+                case .button:       return UIFont.buttonFontSize
                 }
             }
         }
-        public func fonted(font: UIFont) -> NSAttributedString {
+        public func fonted(_ font: UIFont) -> NSAttributedString {
             return attributed(name: NSFontAttributeName, value: font)
         }
-        public func fonted(name: String, size: CGFloat) throws -> NSAttributedString {
-            guard let font = UIFont(name: name, size: size) else { throw Error.CannotFindFontFor(name: name, size: size) }
+        public func fonted(_ name: String, size: CGFloat) throws -> NSAttributedString {
+            guard let font = UIFont(name: name, size: size) else { throw Error.cannotFindFontFor(name: name, size: size) }
             return fonted(font)
         }
-        public func fontedWithSystemFonrOf(size size: FontSize, bold: Bool = false) -> NSAttributedString {
-            let font = bold ? UIFont.boldSystemFontOfSize(size.getNumber()) : UIFont.systemFontOfSize(size.getNumber())
+        public func fontedWithSystemFonrOf(size: FontSize, bold: Bool = false) -> NSAttributedString {
+            let font = bold ? UIFont.boldSystemFont(ofSize: size.getNumber()) : UIFont.systemFont(ofSize: size.getNumber())
             return fonted(font)
         }
-        public func foregroundColored(color: UIColor) -> NSAttributedString {
+        public func foregroundColored(_ color: UIColor) -> NSAttributedString {
             return attributed(name: NSForegroundColorAttributeName, value: color)
         }
-        public func backgorundColored(color: UIColor) -> NSAttributedString {
+        public func backgorundColored(_ color: UIColor) -> NSAttributedString {
             return attributed(name: NSBackgroundColorAttributeName, value: color)
         }
-        public func paragraphStyled(paragraphStyle: NSParagraphStyle) -> NSAttributedString {
+        public func paragraphStyled(_ paragraphStyle: NSParagraphStyle) -> NSAttributedString {
             return attributed(name: NSParagraphStyleAttributeName, value: (paragraphStyle.copy() as? NSParagraphStyle) ?? NSParagraphStyle())
         }
     }

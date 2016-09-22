@@ -14,10 +14,10 @@ public struct Version: Hashable, VersionType, RevisableVersionType {
     public var hashValue: Int {
         get { return ObjectIdentifier(addressID).hashValue }
     }
-    private var addressID = NonObjectiveCBase()
+    fileprivate var addressID = AddressHolder()
     /// Exists only for debugging convenience.
     /// Can be wrong in multi-threaded code... Don't care for now.
-    private var revisionCountForDebuggingOnly = Int(0)
+    fileprivate var revisionCountForDebuggingOnly = Int(0)
 }
 public extension Version {
     public mutating func revise() {
@@ -26,7 +26,7 @@ public extension Version {
     public func revised() -> Version {
         var copy = self
         guard copy.revisionCountForDebuggingOnly < Int.max else { return Version() }
-        copy.addressID = NonObjectiveCBase()
+        copy.addressID = AddressHolder()
         copy.revisionCountForDebuggingOnly += 1
         return copy
     }
@@ -34,7 +34,8 @@ public extension Version {
 extension Version: CustomDebugStringConvertible {
     public var debugDescription: String {
         get {
-            let id = String(format: "%x", ObjectIdentifier(addressID).uintValue)
+
+            let id = String(format: "%x", UInt(bitPattern: ObjectIdentifier(addressID)))
             let rev = String(format: "%i", revisionCountForDebuggingOnly)
             return "(" + id + "/" + rev + ")"
         }
@@ -44,7 +45,7 @@ public func == (a: Version, b: Version) -> Bool {
     return a.addressID === b.addressID
 }
 
-
+private final class AddressHolder {}
 
 
 

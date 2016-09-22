@@ -7,25 +7,25 @@
 //
 
 /// This supports removing of a refernce even in the object's `dealloc`.
-public struct WeakReferenceSet<T: AnyObject>: SequenceType {
+public struct WeakReferenceSet<T: AnyObject>: Sequence {
     /// Intentionally a dictionary instead of set to support
     /// `remove` in `dealloc`.
-    private var mappings = [ObjectIdentifier: WeakReferenceBox<T>]()
+    fileprivate var mappings = [ObjectIdentifier: WeakReferenceBox<T>]()
     public init() {
     }
     public var count: Int {
         get { return mappings.count }
     }
-    public mutating func insert(member: T) {
+    public mutating func insert(_ member: T) {
         mappings[ObjectIdentifier(member)] = WeakReferenceBox(member)
     }
-    public mutating func remove(member: T) {
-        let removed = mappings.removeValueForKey(ObjectIdentifier(member))
+    public mutating func remove(_ member: T) {
+        let removed = mappings.removeValue(forKey: ObjectIdentifier(member))
         precondition(removed != nil)
     }
-    public func generate() -> AnyGenerator<T> {
-        var g = mappings.values.generate()
-        return AnyGenerator {
+    public func makeIterator() -> AnyIterator<T> {
+        var g = mappings.values.makeIterator()
+        return AnyIterator {
             if let value = g.next() {
                 precondition(value.reference != nil, "Referenced object in a box has been disappeared. Possible logic bug.")
                 return value.reference
@@ -55,7 +55,7 @@ private struct WeakReferenceBox<T: AnyObject>: Hashable {
     init(_ reference: T) {
         self.reference = reference
     }
-    private var hashValue: Int {
+    fileprivate var hashValue: Int {
         get {
             precondition(reference != nil, "Referenced object in a box has been disappeared. Possible logic bug.")
             return ObjectIdentifier(reference!).hashValue

@@ -11,7 +11,7 @@
     import AppKit
     import CoreGraphics
     import CoreVideo
-    public enum DisplayLinkError: ErrorType {
+    public enum DisplayLinkError: Error {
         case CannotCreateLink
         case CannotSetLinkCallback
         case CoreVideoError(CVReturn)
@@ -20,7 +20,7 @@
         private typealias Error = DisplayLinkError
         private static var linkWrapper: CVDisplayLinkWrapper?
         private static var handlers = Dictionary<ObjectIdentifier, ()->()>()
-        public static func installMainScreenHandler(id: ObjectIdentifier, f: ()->()) throws {
+        public static func installMainScreenHandler(id: ObjectIdentifier, f: @escaping ()->()) throws {
             assertMainThread()
             assert(handlers[id] == nil)
 
@@ -47,7 +47,7 @@
                 linkWrapper = nil
             }
         }
-        private static func callback() {
+        fileprivate static func callback() {
             for (_, h) in handlers {
                 h()
             }
@@ -79,13 +79,14 @@
         }
     }
 
-    private func displayLinkDidOutput(displayLink: CVDisplayLink,
-                                      _ inNow: UnsafePointer<CVTimeStamp>,
-                                      _ inOutputTime: UnsafePointer<CVTimeStamp>,
-                                      _ flagsIn: CVOptionFlags,
-                                      _ flagsOut: UnsafeMutablePointer<CVOptionFlags>,
-                                      _ displayLinkContext: UnsafeMutablePointer<Void>) -> CVReturn {
+//    typealias CVDisplayLinkOutputCallback = (CVDisplayLink, UnsafePointer<CVTimeStamp>, UnsafePointer<CVTimeStamp>, CVOptionFlags, UnsafeMutablePointer<CVOptionFlags>, UnsafeMutableRawPointer?) -> CVReturn
 
+    private func displayLinkDidOutput(_ displayLink: CVDisplayLink,
+                                       _ inNow: UnsafePointer<CVTimeStamp>,
+                                       _ inOutputTime: UnsafePointer<CVTimeStamp>,
+                                       _ flagsIn: CVOptionFlags,
+                                       _ flagsOut: UnsafeMutablePointer<CVOptionFlags>,
+                                       _ displayLinkContext: UnsafeMutableRawPointer?) -> CVReturn {
         DisplayLinkUtility.callback()
         return kCVReturnSuccess
     }

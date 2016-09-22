@@ -12,7 +12,7 @@
 ///     Current implementation is kind of naive, consumes memory uselessly.
 ///
 public struct ObjectAddressID: Hashable {
-    private let dummy = Dummy()
+    fileprivate let dummy = Dummy()
     public init() {
     }
     public var hashValue: Int {
@@ -26,7 +26,7 @@ public struct ObjectAddressID: Hashable {
 }
 extension ObjectAddressID: CustomStringConvertible {
     public var description: String {
-        get { return "(ObjectID: 0x" + String(format: "%X", ObjectIdentifier(dummy).uintValue) + ")" }
+        get { return "(ObjectID: 0x" + String(format: "%X", UInt(bitPattern: ObjectIdentifier(dummy))) + ")" }
     }
 }
 extension ObjectAddressID: CustomDebugStringConvertible {
@@ -42,5 +42,4 @@ public func ==(a: ObjectAddressID, b: ObjectAddressID) -> Bool {
 // MARK: -
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-private final class Dummy: NonObjectiveCBase {
-}
+private final class Dummy {}

@@ -11,15 +11,15 @@
     import UIKit
     import CoreGraphics
     import CoreVideo
-    public enum DisplayLinkError: ErrorType {
-        case CannotCreateLink
+    public enum DisplayLinkError: Error {
+        case cannotCreateLink
     }
     public struct DisplayLinkUtility {
-        private typealias Error = DisplayLinkError
-        private static var link: CADisplayLink?
-        private static let proxy = TargetProxy()
-        private static var handlers = Dictionary<ObjectIdentifier, ()->()>()
-        public static func installMainScreenHandler(id: ObjectIdentifier, f: ()->()) throws {
+        fileprivate typealias Error = DisplayLinkError
+        fileprivate static var link: CADisplayLink?
+        fileprivate static let proxy = TargetProxy()
+        fileprivate static var handlers = Dictionary<ObjectIdentifier, ()->()>()
+        public static func installMainScreenHandler(_ id: ObjectIdentifier, f: @escaping ()->()) throws {
             assertMainThread()
             assert(handlers[id] == nil)
 
@@ -27,13 +27,13 @@
                 // `CADisplayLink` retains `target`.
                 // So we need a proxy to break retain cycle.
                 link = CADisplayLink(target: proxy, selector: #selector(TargetProxy.TOOLBOX_onTick(_:)))
-                guard let link = link else { throw Error.CannotCreateLink }
-                link.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
-                link.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: UITrackingRunLoopMode)
+                guard let link = link else { throw Error.cannotCreateLink }
+                link.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
+                link.add(to: RunLoop.main, forMode: RunLoopMode.UITrackingRunLoopMode)
             }
             handlers[id] = f
         }
-        public static func deinstallMainScreenHandler(id: ObjectIdentifier) {
+        public static func deinstallMainScreenHandler(_ id: ObjectIdentifier) {
             assertMainThread()
             assert(handlers[id] != nil)
             handlers[id] = nil
@@ -45,11 +45,11 @@
                 guard let link = moved else {
                     fatalError("Display-link is missing...")
                 }
-                link.removeFromRunLoop(NSRunLoop.mainRunLoop(), forMode: UITrackingRunLoopMode)
-                link.removeFromRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
+                link.remove(from: RunLoop.main, forMode: RunLoopMode.UITrackingRunLoopMode)
+                link.remove(from: RunLoop.main, forMode: RunLoopMode.commonModes)
             }
         }
-        private static func callback() {
+        fileprivate static func callback() {
             for (_, h) in handlers {
                 h()
             }
