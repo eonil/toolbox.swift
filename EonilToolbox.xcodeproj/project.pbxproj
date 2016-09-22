@@ -12,6 +12,8 @@
 		451C94DF1D053CFC00C5F640 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C94DC1D053CFC00C5F640 /* Version.swift */; };
 		451C94E01D053CFC00C5F640 /* VersionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C94DD1D053CFC00C5F640 /* VersionType.swift */; };
 		451C94E11D053CFC00C5F640 /* VersionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C94DD1D053CFC00C5F640 /* VersionType.swift */; };
+		452A006E1D943811007DF8F3 /* EonilToolboxTests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452A006D1D943811007DF8F3 /* EonilToolboxTests_iOS.swift */; };
+		452A00701D943811007DF8F3 /* EonilToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45771A9D1CD0E1A30096947A /* EonilToolbox.framework */; };
 		455569331CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455569321CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift */; };
 		4564D3871CD2CD39001265EA /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4564D3861CD2CD39001265EA /* ColorExtensions.swift */; };
 		45771AC51CD0E4B50096947A /* DisplayLinkUtility-OSX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771ABE1CD0E2D10096947A /* DisplayLinkUtility-OSX.swift */; };
@@ -52,6 +54,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		452A00711D943811007DF8F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45771A941CD0E1A30096947A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45771A9C1CD0E1A30096947A;
+			remoteInfo = "EonilToolbox-iOS";
+		};
 		45D1B9941D16CF0300B9F7C3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 45771A941CD0E1A30096947A /* Project object */;
@@ -65,6 +74,9 @@
 		451C93BC1D0331A900C5F640 /* DisplayLinkUtility-iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DisplayLinkUtility-iOS.swift"; sourceTree = "<group>"; };
 		451C94DC1D053CFC00C5F640 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		451C94DD1D053CFC00C5F640 /* VersionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionType.swift; sourceTree = "<group>"; };
+		452A006B1D943811007DF8F3 /* EonilToolboxTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EonilToolboxTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		452A006D1D943811007DF8F3 /* EonilToolboxTests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EonilToolboxTests_iOS.swift; sourceTree = "<group>"; };
+		452A006F1D943811007DF8F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		455569321CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtomicUtilityTypes.swift; sourceTree = "<group>"; };
 		4564D3631CD0EBF9001265EA /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		4564D3641CD0EBF9001265EA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -97,6 +109,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		452A00681D943811007DF8F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				452A00701D943811007DF8F3 /* EonilToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		45771A991CD0E1A30096947A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -131,6 +151,15 @@
 			path = StateManagement;
 			sourceTree = "<group>";
 		};
+		452A006C1D943811007DF8F3 /* EonilToolboxTests-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				452A006D1D943811007DF8F3 /* EonilToolboxTests_iOS.swift */,
+				452A006F1D943811007DF8F3 /* Info.plist */,
+			);
+			path = "EonilToolboxTests-iOS";
+			sourceTree = "<group>";
+		};
 		45771A931CD0E1A30096947A = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +167,7 @@
 				4564D3631CD0EBF9001265EA /* LICENSE.md */,
 				45771A9F1CD0E1A30096947A /* EonilToolbox */,
 				45D1B98F1D16CF0300B9F7C3 /* EonilToolboxTests-macOS */,
+				452A006C1D943811007DF8F3 /* EonilToolboxTests-iOS */,
 				45771A9E1CD0E1A30096947A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -148,6 +178,7 @@
 				45771A9D1CD0E1A30096947A /* EonilToolbox.framework */,
 				45771B101CD0EAE10096947A /* EonilToolbox.framework */,
 				45D1B98E1D16CF0300B9F7C3 /* EonilToolboxTests-macOS.xctest */,
+				452A006B1D943811007DF8F3 /* EonilToolboxTests-iOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -244,6 +275,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		452A006A1D943811007DF8F3 /* EonilToolboxTests-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 452A00751D943811007DF8F3 /* Build configuration list for PBXNativeTarget "EonilToolboxTests-iOS" */;
+			buildPhases = (
+				452A00671D943811007DF8F3 /* Sources */,
+				452A00681D943811007DF8F3 /* Frameworks */,
+				452A00691D943811007DF8F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				452A00721D943811007DF8F3 /* PBXTargetDependency */,
+			);
+			name = "EonilToolboxTests-iOS";
+			productName = "EonilToolboxTests-iOS";
+			productReference = 452A006B1D943811007DF8F3 /* EonilToolboxTests-iOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		45771A9C1CD0E1A30096947A /* EonilToolbox-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45771AA51CD0E1A30096947A /* Build configuration list for PBXNativeTarget "EonilToolbox-iOS" */;
@@ -304,10 +353,14 @@
 		45771A941CD0E1A30096947A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Eonil;
 				TargetAttributes = {
+					452A006A1D943811007DF8F3 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Manual;
+					};
 					45771A9C1CD0E1A30096947A = {
 						CreatedOnToolsVersion = 7.3;
 						LastSwiftMigration = 0800;
@@ -337,11 +390,19 @@
 				45771A9C1CD0E1A30096947A /* EonilToolbox-iOS */,
 				45771B0F1CD0EAE10096947A /* EonilToolbox-OSX */,
 				45D1B98D1D16CF0300B9F7C3 /* EonilToolboxTests-macOS */,
+				452A006A1D943811007DF8F3 /* EonilToolboxTests-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		452A00691D943811007DF8F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		45771A9B1CD0E1A30096947A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -366,6 +427,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		452A00671D943811007DF8F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				452A006E1D943811007DF8F3 /* EonilToolboxTests_iOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		45771A981CD0E1A30096947A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -431,6 +500,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		452A00721D943811007DF8F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45771A9C1CD0E1A30096947A /* EonilToolbox-iOS */;
+			targetProxy = 452A00711D943811007DF8F3 /* PBXContainerItemProxy */;
+		};
 		45D1B9951D16CF0300B9F7C3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 45771B0F1CD0EAE10096947A /* EonilToolbox-OSX */;
@@ -439,6 +513,35 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		452A00731D943811007DF8F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				INFOPLIST_FILE = "EonilToolboxTests-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Eonil.EonilToolboxTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		452A00741D943811007DF8F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				INFOPLIST_FILE = "EonilToolboxTests-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Eonil.EonilToolboxTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		45771AA31CD0E1A30096947A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -459,7 +562,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -510,7 +612,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -623,7 +724,6 @@
 		45D1B9961D16CF0300B9F7C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "EonilToolboxTests-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -638,7 +738,6 @@
 		45D1B9971D16CF0300B9F7C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "EonilToolboxTests-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -653,6 +752,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		452A00751D943811007DF8F3 /* Build configuration list for PBXNativeTarget "EonilToolboxTests-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				452A00731D943811007DF8F3 /* Debug */,
+				452A00741D943811007DF8F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		45771A971CD0E1A30096947A /* Build configuration list for PBXProject "EonilToolbox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

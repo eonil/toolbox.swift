@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "452A006A1D943811007DF8F3"
+               BuildableName = "EonilToolboxTests-iOS.xctest"
+               BlueprintName = "EonilToolboxTests-iOS"
+               ReferencedContainer = "container:EonilToolbox.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "45771A9C1CD0E1A30096947A"
+            BuildableName = "EonilToolbox.framework"
+            BlueprintName = "EonilToolbox-iOS"
+            ReferencedContainer = "container:EonilToolbox.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
