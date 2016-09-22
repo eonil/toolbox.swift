@@ -9,5 +9,5 @@
 import Foundation
 
 func assertMainThread() {
-    assert(NSThread.isMainThread())
+    assert(Thread.isMainThread)
 }

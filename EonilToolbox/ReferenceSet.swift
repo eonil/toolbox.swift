@@ -7,16 +7,16 @@
 //
 
 public struct ReferenceSet<T: AnyObject>: Hashable {
-    private var valueSet = Set<ReferenceEqualityBox<T>>()
+    fileprivate var valueSet = Set<ReferenceEqualityBox<T>>()
     public init() {
     }
     public var count: Int {
         get { return valueSet.count }
     }
-    public mutating func insert(member: T) {
+    public mutating func insert(_ member: T) {
         valueSet.insert(ReferenceEqualityBox(member))
     }
-    public mutating func remove(member: T) -> T? {
+    public mutating func remove(_ member: T) -> T? {
         return valueSet.remove(ReferenceEqualityBox(member))?.reference
     }
     public var hashValue: Int {
@@ -36,7 +36,7 @@ private struct ReferenceEqualityBox<T: AnyObject>: Hashable {
     init(_ reference: T) {
         self.reference = reference
     }
-    private var hashValue: Int {
+    fileprivate var hashValue: Int {
         get { return ObjectIdentifier(reference).hashValue }
     }
 }

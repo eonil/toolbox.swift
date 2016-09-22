@@ -11,8 +11,8 @@ import CoreGraphics
 
 protocol ColorUtility {
     associatedtype ColorType
-    func darkenBy(ratio: CGFloat) -> ColorType
-    func brightenBy(ratio: CGFloat) -> ColorType
+    func darkenBy(_ ratio: CGFloat) -> ColorType
+    func brightenBy(_ ratio: CGFloat) -> ColorType
     func getHSBA() -> (h: CGFloat, s: CGFloat, b: CGFloat, a: CGFloat)
 }
 
@@ -25,11 +25,11 @@ protocol ColorUtility {
             getHue(&h, saturation: &s, brightness: &b, alpha: &a)
             return (h, s, b, a)
         }
-        func darkenBy(ratio: CGFloat) -> UIColor {
+        func darkenBy(_ ratio: CGFloat) -> UIColor {
             let (h,s,b,a) = getHSBA()
             return UIColor(hue: h, saturation: s, brightness: b * (1-ratio), alpha: a)
         }
-        func brightenBy(ratio: CGFloat) -> UIColor {
+        func brightenBy(_ ratio: CGFloat) -> UIColor {
             let (h,s,b,a) = getHSBA()
             return UIColor(hue: h, saturation: s, brightness: b * (1+ratio), alpha: a)
         }

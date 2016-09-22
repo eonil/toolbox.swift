@@ -8,8 +8,8 @@
 
 import Foundation
 
-public enum AtomicError: ErrorType {
-    case SwappingFailureBecauseOldValueDoesNotMatch
+public enum AtomicError: Error {
+    case swappingFailureBecauseOldValueDoesNotMatch
 }
 
 
@@ -18,16 +18,16 @@ public enum AtomicError: ErrorType {
 
 
 public struct AtomicInt32 {
-    private var memory: Int32
+    fileprivate var memory: Int32
     public init(value: Int32) {
         self.memory = value
     }
     public var value: Int32 {
         get { return memory }
     }
-    public mutating func compareAndSwapBarrier(newValue: Int32) throws {
+    public mutating func compareAndSwapBarrier(_ newValue: Int32) throws {
         let ok = OSAtomicCompareAndSwap32Barrier(memory, newValue, &memory)
-        guard ok else { throw AtomicError.SwappingFailureBecauseOldValueDoesNotMatch }
+        guard ok else { throw AtomicError.swappingFailureBecauseOldValueDoesNotMatch }
     }
     public mutating func increment() {
         OSAtomicIncrement32(&memory)
@@ -36,7 +36,7 @@ public struct AtomicInt32 {
         OSAtomicDecrement32(&memory)
     }
 }
-public func += (inout a: AtomicInt32, b: AtomicInt32) {
+public func += (a: inout AtomicInt32, b: AtomicInt32) {
     OSAtomicAdd32Barrier(b.memory, &a.memory)
 }
 public func + (a: AtomicInt32, b: AtomicInt32) -> AtomicInt32 {
@@ -52,16 +52,16 @@ public func + (a: AtomicInt32, b: AtomicInt32) -> AtomicInt32 {
 
 
 public struct AtomicInt64 {
-    private var memory: Int64
+    fileprivate var memory: Int64
     public init(value: Int64) {
         self.memory = value
     }
     public var value: Int64 {
         get { return memory }
     }
-    public mutating func compareAndSwapBarrier(newValue: Int64) throws {
+    public mutating func compareAndSwapBarrier(_ newValue: Int64) throws {
         let ok = OSAtomicCompareAndSwap64Barrier(memory, newValue, &memory)
-        guard ok else { throw AtomicError.SwappingFailureBecauseOldValueDoesNotMatch }
+        guard ok else { throw AtomicError.swappingFailureBecauseOldValueDoesNotMatch }
     }
     public mutating func increment() {
         OSAtomicIncrement64(&memory)
@@ -70,7 +70,7 @@ public struct AtomicInt64 {
         OSAtomicDecrement64(&memory)
     }
 }
-public func += (inout a: AtomicInt64, b: AtomicInt64) {
+public func += (a: inout AtomicInt64, b: AtomicInt64) {
     OSAtomicAdd64Barrier(b.memory, &a.memory)
 }
 public func + (a: AtomicInt64, b: AtomicInt64) -> AtomicInt64 {
