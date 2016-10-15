@@ -83,7 +83,7 @@ public extension NSAttributedString {
         guard let font = Font(name: name, size: size) else { throw Error.cannotFindFontFor(name: name, size: size) }
         return fonted(font)
     }
-    public func fontedWithSystemFonrOf(size: FontSize, bold: Bool = false) -> NSAttributedString {
+    public func fontedWithSystemFontOf(size: FontSize, bold: Bool = false) -> NSAttributedString {
         let font = bold ? Font.boldSystemFont(ofSize: size.getNumber()) : Font.systemFont(ofSize: size.getNumber())
         return fonted(font)
     }
