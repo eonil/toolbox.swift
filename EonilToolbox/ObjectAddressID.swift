@@ -11,10 +11,9 @@
 /// - Note:
 ///     Current implementation is kind of naive, consumes memory uselessly.
 ///
-public struct ObjectAddressID: Hashable {
+public struct ObjectAddressID: Hashable, Comparable {
     fileprivate let dummy = Dummy()
-    public init() {
-    }
+    public init() {}
     public var hashValue: Int {
         get { return ObjectIdentifier(dummy).hashValue }
     }
@@ -34,8 +33,11 @@ extension ObjectAddressID: CustomDebugStringConvertible {
         get { return description }
     }
 }
-public func ==(a: ObjectAddressID, b: ObjectAddressID) -> Bool {
+public func == (_ a: ObjectAddressID, _ b: ObjectAddressID) -> Bool {
     return a.dummy === b.dummy
+}
+public func < (_ a: ObjectAddressID, _ b: ObjectAddressID) -> Bool {
+    return UInt(bitPattern: ObjectIdentifier(a.dummy)) < UInt(bitPattern: ObjectIdentifier(b.dummy))
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

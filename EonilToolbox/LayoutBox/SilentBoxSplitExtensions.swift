@@ -114,12 +114,12 @@ public extension SilentBox {
     }
 }
 extension SilentBox {
-    public func splitInX(_ min: SilentBoxPartition, _ center: SilentBoxPartition, _ max: SilentBoxPartition) -> (min: SilentBox, center: SilentBox, max: SilentBox) {
-        let a = splitInX([min, center, max])
+    public func splitInX(_ min: SilentBoxPartition, _ mid: SilentBoxPartition, _ max: SilentBoxPartition) -> (min: SilentBox, mid: SilentBox, max: SilentBox) {
+        let a = splitInX([min, mid, max])
         return (a[0], a[1], a[2])
     }
-    public func splitInY(_ min: SilentBoxPartition, _ center: SilentBoxPartition, _ max: SilentBoxPartition) -> (min: SilentBox, center: SilentBox, max: SilentBox) {
-        let a = splitInY([min, center, max])
+    public func splitInY(_ min: SilentBoxPartition, _ mid: SilentBoxPartition, _ max: SilentBoxPartition) -> (min: SilentBox, mid: SilentBox, max: SilentBox) {
+        let a = splitInY([min, mid, max])
         return (a[0], a[1], a[2])
     }
     public func splitInY(_ min: SilentBoxPartition, _ max: SilentBoxPartition) -> (min: SilentBox, max: SilentBox) {
@@ -128,11 +128,11 @@ extension SilentBox {
     }
 }
 extension SilentBox {
-    public func splitInX<A: SilentBoxPartitionType, B: SilentBoxPartitionType, C: SilentBoxPartitionType>(_ min: A, _ center: B, _ max: C) -> (min: SilentBox, center: SilentBox, max: SilentBox) {
-        return splitInX(min.toPartition(), center.toPartition(), max.toPartition())
+    public func splitInX<A: SilentBoxPartitionType, B: SilentBoxPartitionType, C: SilentBoxPartitionType>(_ min: A, _ mid: B, _ max: C) -> (min: SilentBox, mid: SilentBox, max: SilentBox) {
+        return splitInX(min.toPartition(), mid.toPartition(), max.toPartition())
     }
-    public func splitInY<A: SilentBoxPartitionType, B: SilentBoxPartitionType, C: SilentBoxPartitionType>(_ min: A, _ center: B, _ max: C) -> (min: SilentBox, center: SilentBox, max: SilentBox) {
-        return splitInY(min.toPartition(), center.toPartition(), max.toPartition())
+    public func splitInY<A: SilentBoxPartitionType, B: SilentBoxPartitionType, C: SilentBoxPartitionType>(_ min: A, _ mid: B, _ max: C) -> (min: SilentBox, mid: SilentBox, max: SilentBox) {
+        return splitInY(min.toPartition(), mid.toPartition(), max.toPartition())
     }
 }
 
