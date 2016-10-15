@@ -200,7 +200,6 @@
 				455569321CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift */,
 				451C94DB1D053CEF00C5F640 /* StateManagement */,
 				45771AD41CD0E6430096947A /* LayoutBox */,
-				458EE5D31D12EC1C004A1942 /* AttributedStringExtensions */,
 				45771ACD1CD0E58F0096947A /* iOSOnly */,
 				45771AB81CD0E29F0096947A /* OSXOnly */,
 			);
@@ -237,13 +236,6 @@
 				45D1B9E01D19715100B9F7C3 /* MaxSizeView.swift */,
 			);
 			path = LayoutBox;
-			sourceTree = "<group>";
-		};
-		458EE5D31D12EC1C004A1942 /* AttributedStringExtensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AttributedStringExtensions;
 			sourceTree = "<group>";
 		};
 		45D1B98F1D16CF0300B9F7C3 /* EonilToolboxTests-macOS */ = {
@@ -759,6 +751,7 @@
 				452A00741D943811007DF8F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		45771A971CD0E1A30096947A /* Build configuration list for PBXProject "EonilToolbox" */ = {
 			isa = XCConfigurationList;
