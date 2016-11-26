@@ -46,6 +46,12 @@ extension BoxType {
             min: min + vector,
             max: max + vector)
     }
+    public func translatedXBy(_ x: Scalar) -> Self {
+        return translatedBy((x, 0))
+    }
+    public func translatedYBy(_ y: Scalar) -> Self {
+        return translatedBy((0, y))
+    }
     public func scaledBy(_ ratio: Scalar) -> Self {
         return Self(
             min: min * ratio,
