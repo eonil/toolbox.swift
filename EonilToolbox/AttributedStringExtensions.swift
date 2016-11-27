@@ -28,63 +28,118 @@ public extension NSAttributedString {
 
 #if os(iOS)
     import UIKit
-    public extension NSAttributedString {
-        public typealias Color = UIColor
-        public typealias Font = UIFont
-    }
+    public typealias Color = UIColor
+    public typealias Font = UIFont
 #endif
 
 #if os(macOS)
     import AppKit
-    public extension NSAttributedString {
-        public typealias Color = NSColor
-        public typealias Font = NSFont
-    }
+    public typealias Color = NSColor
+    public typealias Font = NSFont
 #endif
 
+public enum AttributionError: Swift.Error {
+    case cannotFindFontFor(name: String, size: CGFloat)
+}
+public enum FontSize {
+    #if os(iOS)
+    case system
+    case smallSystem
+    case label
+    case button
+    fileprivate func getNumber() -> CGFloat {
+        switch self {
+        case .system:       return Font.systemFontSize
+        case .smallSystem:  return Font.smallSystemFontSize
+        case .label:        return Font.labelFontSize
+        case .button:       return Font.buttonFontSize
+        }
+    }
+    #endif
+    #if os(macOS)
+    case system
+    case smallSystem
+    case label
+    //        case button
+    fileprivate func getNumber() -> CGFloat {
+        switch self {
+        case .system:       return Font.systemFontSize()
+        case .smallSystem:  return Font.smallSystemFontSize()
+        case .label:        return Font.labelFontSize()
+        //            case .button:       return Font.buttonFontSize
+        }
+    }
+    #endif
+}
+@available(iOS, introduced: 8.2)
+@available(macOS, introduced: 10.11)
+public enum FontWeight {
+    case ultraLight
+    case thin
+    case light
+    case regular
+    case medium
+    case semibold
+    case bold
+    case heavy
+    case black
+
+    #if os(iOS)
+    fileprivate func getNumber() -> CGFloat {
+        switch self {
+        case .ultraLight:   return UIFontWeightUltraLight
+        case .thin:         return UIFontWeightThin
+        case .light:        return UIFontWeightLight
+        case .regular:      return UIFontWeightRegular
+        case .medium:       return UIFontWeightMedium
+        case .semibold:     return UIFontWeightSemibold
+        case .bold:         return UIFontWeightBold
+        case .heavy:        return UIFontWeightHeavy
+        case .black:        return UIFontWeightBlack
+        }
+    }
+    #endif
+    #if os(macOS)
+    fileprivate func getNumber() -> CGFloat {
+        switch self {
+        case .ultraLight:   return NSFontWeightUltraLight
+        case .thin:         return NSFontWeightThin
+        case .light:        return NSFontWeightLight
+        case .regular:      return NSFontWeightRegular
+        case .medium:       return NSFontWeightMedium
+        case .semibold:     return NSFontWeightSemibold
+        case .bold:         return NSFontWeightBold
+        case .heavy:        return NSFontWeightHeavy
+        case .black:        return NSFontWeightBlack
+        }
+    }
+    #endif
+}
+
+
+
 public extension NSAttributedString {
-    public enum Error: Swift.Error {
-        case cannotFindFontFor(name: String, size: CGFloat)
-    }
-    public enum FontSize {
-        #if os(iOS)
-        case system
-        case smallSystem
-        case label
-        case button
-        fileprivate func getNumber() -> CGFloat {
-            switch self {
-            case .system:       return Font.systemFontSize
-            case .smallSystem:  return Font.smallSystemFontSize
-            case .label:        return Font.labelFontSize
-            case .button:       return Font.buttonFontSize
-            }
-        }
-        #endif
-        #if os(macOS)
-        case system
-        case smallSystem
-        case label
-//        case button
-        fileprivate func getNumber() -> CGFloat {
-            switch self {
-            case .system:       return Font.systemFontSize()
-            case .smallSystem:  return Font.smallSystemFontSize()
-            case .label:        return Font.labelFontSize()
-//            case .button:       return Font.buttonFontSize
-            }
-        }
-        #endif
-    }
     public func fonted(_ font: Font) -> NSAttributedString {
         return attributed(name: NSFontAttributeName, value: font)
     }
     public func fonted(_ name: String, size: CGFloat) throws -> NSAttributedString {
-        guard let font = Font(name: name, size: size) else { throw Error.cannotFindFontFor(name: name, size: size) }
+        guard let font = Font(name: name, size: size) else { throw AttributionError.cannotFindFontFor(name: name, size: size) }
         return fonted(font)
     }
     public func fontedWithSystemFontOf(size: FontSize, bold: Bool = false) -> NSAttributedString {
         let font = bold ? Font.boldSystemFont(ofSize: size.getNumber()) : Font.systemFont(ofSize: size.getNumber())
+        return fonted(font)
+    }
+    @available(iOS, introduced: 8.2)
+    @available(macOS, introduced: 10.11)
+    public func fontedWithSystemFont(ofSize: CGFloat, weight: CGFloat) -> NSAttributedString {
+        let font = UIFont.systemFont(ofSize: ofSize, weight: weight)
+        return fonted(font)
+    }
+    @available(iOS, introduced: 8.2)
+    @available(macOS, introduced: 10.11)
+    public func fontedWithSystemFont(ofSize: CGFloat, weight: FontWeight) -> NSAttributedString {
+        let font = UIFont.systemFont(ofSize: ofSize, weight: weight.getNumber())
         return fonted(font)
     }
     public func foregroundColored(_ color: Color) -> NSAttributedString {

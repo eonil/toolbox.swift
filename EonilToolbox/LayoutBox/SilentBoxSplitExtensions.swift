@@ -14,7 +14,7 @@ import CoreGraphics
 //    return SilentBoxPartition.soft(proportion: CGFloat(p))
 //}
 
-postfix operator %
+postfix operator % 
 public postfix func %(p: Int) -> SilentBoxPartition {
     return SilentBoxPartition.soft(proportion: CGFloat(p) / 100)
 }
