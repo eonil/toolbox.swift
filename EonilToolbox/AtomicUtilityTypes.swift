@@ -12,15 +12,13 @@ public enum AtomicError: Error {
     case swappingFailureBecauseOldValueDoesNotMatch
 }
 
-
-
-
-
-
+/// DO NOT use this type. This seems to be a wrong implementation...
+@available(*,unavailable)
 public struct AtomicInt32 {
     fileprivate var memory: Int32
     public init(value: Int32) {
         self.memory = value
+        C11AtomicsWrapper_atomic_load()
     }
     public var value: Int32 {
         get { return memory }

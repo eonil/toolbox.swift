@@ -45,5 +45,4 @@ class EonilToolboxTests_macOS: XCTestCase {
             XCTAssert(c.size.y == 100)
         }
     }
-
 }
