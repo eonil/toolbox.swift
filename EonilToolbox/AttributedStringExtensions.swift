@@ -133,13 +133,13 @@ public extension NSAttributedString {
     @available(iOS, introduced: 8.2)
     @available(macOS, introduced: 10.11)
     public func fontedWithSystemFont(ofSize: CGFloat, weight: CGFloat) -> NSAttributedString {
-        let font = UIFont.systemFont(ofSize: ofSize, weight: weight)
+        let font = Font.systemFont(ofSize: ofSize, weight: weight)
         return fonted(font)
     }
     @available(iOS, introduced: 8.2)
     @available(macOS, introduced: 10.11)
     public func fontedWithSystemFont(ofSize: CGFloat, weight: FontWeight) -> NSAttributedString {
-        let font = UIFont.systemFont(ofSize: ofSize, weight: weight.getNumber())
+        let font = Font.systemFont(ofSize: ofSize, weight: weight.getNumber())
         return fonted(font)
     }
     public func foregroundColored(_ color: Color) -> NSAttributedString {
