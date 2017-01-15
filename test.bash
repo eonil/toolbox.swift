@@ -1,4 +1,6 @@
 #! /bin/bash
+set -e errexit
+set -o pipefail
 
 xcodebuild -scheme EonilToolbox-iOS -configuration Debug -sdk iphonesimulator10.0 clean build test
 xcodebuild -scheme EonilToolbox-iOS -configuration Release -sdk iphonesimulator10.0 clean build
