@@ -16,7 +16,6 @@
 		451D75121DEC637F008CFEC9 /* EonilToolbox-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 451D75101DEC637F008CFEC9 /* EonilToolbox-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		452A006E1D943811007DF8F3 /* EonilToolboxTests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452A006D1D943811007DF8F3 /* EonilToolboxTests_iOS.swift */; };
 		452A00701D943811007DF8F3 /* EonilToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45771A9D1CD0E1A30096947A /* EonilToolbox.framework */; };
-		455569331CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455569321CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift */; };
 		4564D3871CD2CD39001265EA /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4564D3861CD2CD39001265EA /* ColorExtensions.swift */; };
 		45771AC51CD0E4B50096947A /* DisplayLinkUtility-OSX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771ABE1CD0E2D10096947A /* DisplayLinkUtility-OSX.swift */; };
 		45771AC61CD0E4B50096947A /* ViewInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45771AC01CD0E37E0096947A /* ViewInstaller.swift */; };
@@ -80,7 +79,6 @@
 		452A006B1D943811007DF8F3 /* EonilToolboxTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EonilToolboxTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		452A006D1D943811007DF8F3 /* EonilToolboxTests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EonilToolboxTests_iOS.swift; sourceTree = "<group>"; };
 		452A006F1D943811007DF8F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		455569321CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtomicUtilityTypes.swift; sourceTree = "<group>"; };
 		4564D3631CD0EBF9001265EA /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		4564D3641CD0EBF9001265EA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4564D3861CD2CD39001265EA /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
@@ -154,13 +152,6 @@
 			path = StateManagement;
 			sourceTree = "<group>";
 		};
-		451D75091DEC634B008CFEC9 /* Atomics */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Atomics;
-			sourceTree = "<group>";
-		};
 		452A006C1D943811007DF8F3 /* EonilToolboxTests-iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,8 +199,6 @@
 				4564D3861CD2CD39001265EA /* ColorExtensions.swift */,
 				458EE5D71D12EC35004A1942 /* AttributedStringExtensions.swift */,
 				459DB8DE1CD48C1D00C892D9 /* InternalUtilityFunctions.swift */,
-				455569321CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift */,
-				451D75091DEC634B008CFEC9 /* Atomics */,
 				451C94DB1D053CEF00C5F640 /* StateManagement */,
 				45771AD41CD0E6430096947A /* LayoutBox */,
 				45771ACD1CD0E58F0096947A /* iOSOnly */,
@@ -448,7 +437,6 @@
 				451C94E01D053CFC00C5F640 /* VersionType.swift in Sources */,
 				45771AC71CD0E4B50096947A /* ObjectAddressID.swift in Sources */,
 				45830AB21CE9538B002FEA3D /* WeakReferenceSet.swift in Sources */,
-				455569331CF6AB8B00F2BD4D /* AtomicUtilityTypes.swift in Sources */,
 				45771AD21CD0E5980096947A /* DisplayLinkUtilityMobile.swift in Sources */,
 				458EE5D81D12EC35004A1942 /* AttributedStringExtensions.swift in Sources */,
 				45771ADE1CD0E6640096947A /* BoxType.swift in Sources */,

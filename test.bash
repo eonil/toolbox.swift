@@ -2,8 +2,9 @@
 set -e errexit
 set -o pipefail
 
-xcodebuild -scheme EonilToolbox-iOS -configuration Debug -sdk iphonesimulator10.0 clean build test
-xcodebuild -scheme EonilToolbox-iOS -configuration Release -sdk iphonesimulator10.0 clean build
+IOS_DEST="platform=iOS Simulator,name=iPhone 7,OS=10.2"
+xcodebuild -scheme EonilToolbox-iOS -destination "$IOS_DEST" -configuration Debug clean build test
+xcodebuild -scheme EonilToolbox-iOS -destination "$IOS_DEST" -configuration Release clean build
 
 xcodebuild -scheme EonilToolbox-OSX -configuration Debug clean build test
 xcodebuild -scheme EonilToolbox-OSX -configuration Release clean build
