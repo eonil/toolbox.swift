@@ -113,12 +113,12 @@ public extension SilentBox {
         return Array(budgetArea.splitInY(partitionLengths))
     }
 }
-extension SilentBox {
-    public func splitInX(_ min: SilentBoxPartition, _ mid: SilentBoxPartition, _ max: SilentBoxPartition) -> (min: SilentBox, mid: SilentBox, max: SilentBox) {
+public extension SilentBox {
+    public func splitInX(_ min: SilentBoxPartition, _ mid: SilentBoxPartition, _ max: SilentBoxPartition) -> (SilentBox, SilentBox, SilentBox) {
         let a = splitInX([min, mid, max])
         return (a[0], a[1], a[2])
     }
-    public func splitInY(_ min: SilentBoxPartition, _ mid: SilentBoxPartition, _ max: SilentBoxPartition) -> (min: SilentBox, mid: SilentBox, max: SilentBox) {
+    public func splitInY(_ min: SilentBoxPartition, _ mid: SilentBoxPartition, _ max: SilentBoxPartition) -> (SilentBox, SilentBox, SilentBox) {
         let a = splitInY([min, mid, max])
         return (a[0], a[1], a[2])
     }
@@ -127,7 +127,7 @@ extension SilentBox {
 //        return (a[0], a[1])
 //    }
 }
-extension SilentBox {
+public extension SilentBox {
     public func splitInX<A: SilentBoxPartitionType, B: SilentBoxPartitionType, C: SilentBoxPartitionType>(_ min: A, _ mid: B, _ max: C) -> (min: SilentBox, mid: SilentBox, max: SilentBox) {
         return splitInX(min.toPartition(), mid.toPartition(), max.toPartition())
     }
@@ -146,6 +146,11 @@ public protocol SilentBoxPartitionType {
 extension SilentBoxPartition: SilentBoxPartitionType {
     public func toPartition() -> SilentBoxPartition {
         return self
+    }
+}
+extension Int: SilentBoxPartitionType {
+    public func toPartition() -> SilentBoxPartition {
+        return .rigid(length: CGFloat(self))
     }
 }
 extension CGFloat: SilentBoxPartitionType {

@@ -62,6 +62,12 @@ extension BoxType {
         return Self(center: center,
                     size: size)
     }
+    public func resizedXTo(_ x: Scalar) -> Self {
+        return resizedTo((x, size.y))
+    }
+    public func resizedYTo(_ y: Scalar) -> Self {
+        return resizedTo((size.x, y))
+    }
     public func splitAtX(_ x: Scalar) -> (min: Self, max: Self) {
         precondition(x >= min.x)
         precondition(x <= max.x)
